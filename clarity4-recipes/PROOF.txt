@@ -1,0 +1,41 @@
+# Test run 2026-10-24T05:24:34Z, @stacks/clarinet-sdk 3.25.0, simulated chain
+
+1. Spending limit (restrict-assets?)
+ok   honest shop takes 5 STX under a 10 STX limit: (ok true)
+ok   greedy shop trying 500 STX is stopped and nothing moves: (err u0)
+ok   same shop works if you knowingly allow 600 STX: (ok true)
+
+2. Capped vault (as-contract?)
+ok   vault holds 50 STX of tips
+ok   a stranger can't pay out: (err u100)
+ok   owner pays out 8 STX (under the 10 STX cap): (ok true)
+ok   owner can't pay out 20 STX in one go: (err u0)
+ok   the buggy "send everything" is stopped, 42 STX still there: (err u0)
+
+3. Audited code (contract-hash?)
+ok   nothing is audited before the owner approves
+ok   a stranger can't approve: (err u100)
+ok   owner approves template-a's code: (ok true)
+ok   template-a counts as audited
+ok   an exact copy under another name also counts
+ok   a copy with one comment changed does NOT count
+ok   a plain wallet address is never "audited"
+
+4. Deadlines (stacks-block-time)
+ok   challenge 1 opened: (ok u1)
+ok   about 24 hours left: 86400 s
+ok   friend answers in time and beats it: (ok true)
+ok   can't answer twice: (err u102)
+ok   answer after 24 hours is refused: (err u101)
+ok   seconds-left shows 0 after the deadline
+
+5. Device key (secp256r1-verify)
+ok   no key registered yet: (err u100)
+ok   a signature from the registered device key is accepted: (ok true)
+ok   the message is recorded as signed by wallet_1
+ok   the same message can't be replayed: (err u102)
+ok   an old signature on a changed score is rejected: (err u101)
+ok   20 fresh signatures in a row all check out: 20/20
+ok   quirk confirmed: a signature over a ready-made hash does not check in Clarity 4
+
+28/28 checks pass

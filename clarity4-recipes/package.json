@@ -1,0 +1,12 @@
+{
+  "name": "clarity4-recipes",
+  "version": "0.1.0",
+  "description": "Five tiny copy-paste Clarity 4 contracts with tests",
+  "type": "module",
+  "license": "MIT",
+  "scripts": { "test": "node tests/recipes.test.mjs" },
+  "devDependencies": {
+    "@stacks/clarinet-sdk": "3.25.0",
+    "@stacks/transactions": "7.6.0"
+  }
+}

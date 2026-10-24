@@ -1,0 +1,58 @@
+[project]
+name = "clarity4-recipes"
+requirements = []
+
+[contracts.action-trait]
+path = "contracts/1-spend-limit/action-trait.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.spend-limit]
+path = "contracts/1-spend-limit/spend-limit.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.honest-shop]
+path = "contracts/1-spend-limit/honest-shop.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.greedy-shop]
+path = "contracts/1-spend-limit/greedy-shop.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.capped-vault]
+path = "contracts/2-capped-vault/capped-vault.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.audited-code]
+path = "contracts/3-audited-code/audited-code.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.template-a]
+path = "contracts/3-audited-code/template-a.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.template-copy]
+path = "contracts/3-audited-code/template-copy.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.template-edited]
+path = "contracts/3-audited-code/template-edited.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.deadline]
+path = "contracts/4-deadline/deadline.clar"
+clarity_version = 4
+epoch = "3.3"
+
+[contracts.device-key]
+path = "contracts/5-device-key/device-key.clar"
+clarity_version = 4
+epoch = "3.3"

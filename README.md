@@ -12,6 +12,8 @@ fairplay-kit/
           small open tools that make a game provably fair.
           daily map from a real bitcoin block, duel links,
           a scoreboard sealed on stacks.
+clarity4-recipes/
+          five tiny clarity 4 contracts to copy, with tests.
 ```
 
 play it: https://blip-yield.blipyield.workers.dev/play
