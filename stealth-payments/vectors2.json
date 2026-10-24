@@ -1,0 +1,162 @@
+{
+  "warning": "PUBLIC THROWAWAY TEST KEYS. Each key is sha256 of the public string in `source`. Anyone can spend from these addresses. Never send real funds.",
+  "scheme": "See SPEC.md. t = H_SharedSecret(ser(r*S)) mod n; tag = H_ViewTag(ser(r*S))[0]; P = B_m + t*G; B_m = B + H_Label(ser32(s)||ser32(m))*G for m >= 1; addr = c32check(22 mainnet | 26 testnet, hash160(ser(P))); H_x = BIP-340 tagged hash \"StacksStealth/x\".",
+  "valid": [
+    {
+      "comment": "vector 1: testnet. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 1 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 1 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 1 r\")"
+      },
+      "network": "testnet",
+      "label": 0,
+      "scanPriv": "8709647823e2a2a48e8aa58891f3af4a95ae10d93c3cae917484943537708cea",
+      "spendPriv": "ef6586dfcbdfe1137e96f638870f5c6855036a09d6318e90723701353ecebf0f",
+      "spendPub": "02c790445ba16de3d27863501215b94ef549f7c89384a43dece1f476f7614932d8",
+      "r": "6874e062904039365cef99b34b5571c11db425463f73bd00da460afe279ad928",
+      "code": "tspstx1qqvetvx2p0qv4u6f2khquae4277aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqy0aswz",
+      "R": "03a542773e177fe09c31d9b4034360614925bc986ee1e1d302cf04c821e921dc23",
+      "tag": "84",
+      "addr": "ST2QSA3EH8V01P1PD8ZB16D4CVKVTV38E6K04675Z",
+      "spendKey": "3d06f2c399b34b54f638287525a9653b63ca1073c0188e994f7e9d5dae794d3e"
+    },
+    {
+      "comment": "vector 2: testnet. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 2 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 2 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 2 r\")"
+      },
+      "network": "testnet",
+      "label": 0,
+      "scanPriv": "5104464f519015452b9ff5d8669cca00ae4b29f635ca790b7e3b4d1aea3abc3a",
+      "spendPriv": "964080bc6de9615273b14934b0b2838c4a815b51866685bd5ad6447a6b3503bf",
+      "spendPub": "0375212c4083adff6b9db9de97c588e6ae5027e63d39d76213da90b4dade93f261",
+      "r": "e0a121b9a7c5b910784a4110b9b3f4a4121320306182f2cddbe7df9d91d0df8d",
+      "code": "tspstx1qq0sjvdw2xr3faa3a6tyt4z4y85t9a88mn8w35g793unww7wsv9uk2qm4yykypqadla4emww7jlzc3e4w2qn7v0fe6a3p8k5sknddayljvy7vy9pp",
+      "R": "028dfb76d5e17129b5553b30d99e4565029f34bfb8b86627c1c56e165781e39390",
+      "tag": "a3",
+      "addr": "STVWQ2HARXYVYN97TWKZWTG7DTAH5NY7MAH9VDH9",
+      "spendKey": "64a218b7c16322ba1ac85e2ab115be87d01d76c80c26be12c1778ca2cacb5ac8"
+    },
+    {
+      "comment": "vector 3: mainnet. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 3 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 3 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 3 r\")"
+      },
+      "network": "mainnet",
+      "label": 0,
+      "scanPriv": "93b85283552f4aa5c3d526b9dc90da0fa3f0b5cc5a4e5b84db2a0009e388de18",
+      "spendPriv": "23ce88b87f71e0f75d72a22d91fb1c578a48b8fef74fe9a6c3195a68825e6498",
+      "spendPub": "035c688f6c21628b02c8ae3ff5f6d9b2209ed1ee1e66c0698e7bc4a4e2832040ff",
+      "r": "672c7020309f5977a84d82ba0a108f54ff9f5eff278cc51d767feeb2b3140477",
+      "code": "spstx1qqwfx2c5naqk45ltytf6w6g6jlga6ersjf74klpcjulh2q5vdlyw8jq6udz8kcgtz3vpv3t3l7hmdnv3qnmg7u8nxcp5cu77y5n3gxgzqluxvs7za",
+      "R": "03f8a1ad321a99b71a055bae33daed2b119fd0c79230809ad272da0905b5f21a88",
+      "tag": "ba",
+      "addr": "SP35GRJ3DWJX992BNAR4H4ATWS7XN0Y7GKSZD6FMZ",
+      "spendKey": "284bc6d262996ab539dbb52db4d8c82d2dc6d35134cdcce5e888a5c8474b2a4a"
+    },
+    {
+      "comment": "vector 4: testnet, label 1. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 4 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 4 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 4 r\")"
+      },
+      "network": "testnet",
+      "label": 1,
+      "scanPriv": "84619af891704bb77d922d2cba880300c1d9627d85874919a7a6551731322ec0",
+      "spendPriv": "13e3d339639cb353e8841ff3279b9c949951442902140006e4e83f0bb4ad46e7",
+      "spendPub": "02a0eef4cc10ba7f46975a126aa91362ef3129fb648babe0d4db50401309113e58",
+      "r": "b17fb08192eb25c425e3332d002551fe943bef73022ed2a18ee1dba2780ed78f",
+      "code": "tspstx1qqt6p5u0y9smnpl6q4th7el9tvku8cme0hpffgkdr80xkd5mlwqlkzq3r86rz7mjwl4gzmq942cc8nv7cge4j38xuew6hz5nmf3n4x7ukuqgdgvmc",
+      "R": "02f6b00da8188bdf7d50e28f2783e2c33acbcdb4a9c8334a9beead779f4a59a0a1",
+      "tag": "4f",
+      "addr": "ST1BDKF7NSWGA6JY7ZE3XQGJREHZWBWE445F83QEC",
+      "spendKey": "a18813ea6cf21abcdf63637a04763ce1b7fe7838ac5ee3856d6f1fab61a04d81"
+    },
+    {
+      "comment": "vector 5: testnet, label 7. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 5 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 5 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 5 r\")"
+      },
+      "network": "testnet",
+      "label": 7,
+      "scanPriv": "3af1e09a0e33148039a61bba184c780414b47891eb92ece771721e3f63d217fd",
+      "spendPriv": "6f2a57f8995daa6a8d3dda6f965c86d7ff8d7004fe41332dfc144ea7f681b161",
+      "spendPub": "02eba56ef7f41aca32f314872b1a6408d1cc5794d65a402fce4b98fe197a859bfb",
+      "r": "cee7c3c8057ee0a6e67d81b3e24d4351c80e120fd21e8a1630a92540bfa39e30",
+      "code": "tspstx1qqg5hp0j0q0wcz3watu97l56v9fqdgkgg8pv7dujr0kj9l7ycgg3ggq62j60s3scaeahe4qpkr347dg5rm7y0t33wuytaty3p72ly6ul9msvyx3yr",
+      "R": "02d190dfef1a34612bff5d81e6ee398b52e3bffddd6dff8f898cc2775f39d5242f",
+      "tag": "37",
+      "addr": "ST35AFR3PD4QZE9XMETRDVG2RNMEMXZNEN1ZV8AQH",
+      "spendKey": "037fd4c6e900fd509fd28f817569d48ce0308297eba79bfca2ca35fe107d509b"
+    },
+    {
+      "comment": "vector 6: mainnet, label 3. PUBLIC THROWAWAY KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 6 scan\")",
+        "spendPriv": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 6 spend\")",
+        "r": "sha256(\"stx-stealth v2 PUBLIC TEST VECTOR 6 r\")"
+      },
+      "network": "mainnet",
+      "label": 3,
+      "scanPriv": "b14310ce2b83bf86033efffc311a3ae66912456c9aec774b87513ed9bb0ddd15",
+      "spendPriv": "45994257fd49e29e251e7af58159e90d19dc0ee037590a95e6039238a4809687",
+      "spendPub": "020372f7d775995c8fd48a346d69956c0a74038ccfc2d3d61aa697fe69d8fdf7e2",
+      "r": "c90dcbd051fa582902ac0e2f5baa7133ec4700fae408646ac349210bf6092794",
+      "code": "spstx1qqwx8vh7ghflgtzjaews0k3wqjrhd7hd2ufhgl7l5kavkckp2gxrtsqm2qeyg5hjt8g6nhn72t0lafg6f249y4p9vy5e2srpxgucnjxrdmql09udj",
+      "R": "0322ccf9e01cdaca13fe86bc3f985ca476403f0d5c2c07bd66669922410f70aa72",
+      "tag": "56",
+      "addr": "SP2K5REEW15KJ02FQH6D750XCB2J8MESM50JWWHB0",
+      "spendKey": "2b4e4e1f2bd143a5ef372833210b38b152677deb6d64b18b625f89857f0b07f6"
+    }
+  ],
+  "invalid": [
+    {
+      "comment": "one character changed (typo): checksum fails",
+      "code": "tspstx1qqvetvx2p0qv4q6f2khquae4277aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqy0aswz",
+      "error": "checksum failed (typo?)"
+    },
+    {
+      "comment": "last character changed: checksum fails",
+      "code": "tspstx1qqvetvx2p0qv4u6f2khquae4277aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqy0aswq",
+      "error": "checksum failed (typo?)"
+    },
+    {
+      "comment": "two characters swapped",
+      "code": "tspstx1qqvetvx2p0qv4u6f2khquae2477aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqy0aswz",
+      "error": "checksum failed (typo?)"
+    },
+    {
+      "comment": "mixed case",
+      "code": "TSPSTX1QQVetvx2p0qv4u6f2khquae4277aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqy0aswz",
+      "error": "mixed case"
+    },
+    {
+      "comment": "unknown prefix (bitcoin silent payment code prefix \"sp\")",
+      "code": "sp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq2zud99",
+      "error": "unknown code prefix \"sp\""
+    },
+    {
+      "comment": "unknown code version 1",
+      "code": "tspstx1pqvetvx2p0qv4u6f2khquae4277aqzffjlj9yhnzukw3hz5d6gj87jqk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqzg8fqd",
+      "error": "unsupported code version"
+    },
+    {
+      "comment": "scan key not on the curve (x = 5)",
+      "code": "tspstx1qqgqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq2qk8jpz9hgtdu0f8sc6szg2mjnh4f8mu3yuy5s77ec05wmmkzjfjmqec7l5z",
+      "error": "bad point: is not on curve, sqrt error: Cannot find square root"
+    },
+    {
+      "comment": "old v1 format is not a v2 code",
+      "code": "stx-stealth:1:021111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "error": "bad separator"
+    }
+  ]
+}

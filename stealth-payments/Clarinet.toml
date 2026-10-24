@@ -1,0 +1,37 @@
+# TESTNET ONLY. Simnet test project for the stealth announcer.
+# contracts-test/* are for simnet tests only and must never be deployed.
+[project]
+name = "stealth-kit"
+requirements = []
+[contracts.sip-010-trait]
+path = "contracts-test/sip-010-trait.clar"
+clarity_version = 3
+epoch = "3.3"
+[contracts.stealth-announcer]
+path = "stealth-announcer.clar"
+clarity_version = 3
+epoch = "3.3"
+[contracts.mock-token]
+path = "contracts-test/mock-token.clar"
+clarity_version = 3
+epoch = "3.3"
+[contracts.mock-token-noimpl]
+path = "contracts-test/mock-token-noimpl.clar"
+clarity_version = 3
+epoch = "3.3"
+[contracts.stealth-announcer-v2]
+path = "stealth-announcer-v2.clar"
+clarity_version = 4
+epoch = "3.3"
+[contracts.evil-token]
+path = "contracts-test/evil-token.clar"
+clarity_version = 4
+epoch = "3.3"
+[contracts.greedy-token]
+path = "contracts-test/greedy-token.clar"
+clarity_version = 4
+epoch = "3.3"
+[contracts.stealth-registry]
+path = "stealth-registry.clar"
+clarity_version = 4
+epoch = "3.3"

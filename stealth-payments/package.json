@@ -1,0 +1,19 @@
+{
+  "name": "stx-stealth-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TESTNET-ONLY fresh-address (stealth address) payments for Stacks",
+  "dependencies": {
+    "@noble/curves": "2.4.0",
+    "@noble/hashes": "2.4.0"
+  },
+  "devDependencies": {
+    "@stacks/clarinet-sdk": "3.25.0",
+    "@stacks/network": "7.6.0",
+    "@stacks/transactions": "7.6.0"
+  },
+  "scripts": {
+    "test": "node tests/stealth.test.mjs && node tests/announcer.test.mjs && node tests/stealth2.test.mjs && node tests/announcer2.test.mjs && node tests/wallet-pay.test.mjs"
+  }
+}

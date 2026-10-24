@@ -1,0 +1,4 @@
+[network]
+name = "devnet"
+# The tests need Clarinet's public default test accounts here: deployer, wallet_1 and wallet_2.
+# Run `clarinet check` once to fill them in, or copy them from Clarinet's docs. Never put a real seed phrase in this repo.

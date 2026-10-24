@@ -1,0 +1,108 @@
+{
+  "warning": "PUBLIC THROWAWAY TEST KEYS. Each key is sha256 of the public string shown in `source`. Anyone can spend from these addresses. Never send real funds.",
+  "scheme": "t = sha256(\"blip-stealth-v1\" || compressed(r*S)) mod n; P = B + t*G; addr = c32check(26, hash160(compressed P)); tag = sha256(\"blip-stealth-tag-v1\" || compressed(r*S))[0]; spendKey = (b + t) mod n (stacks.js form: spendKey + \"01\")",
+  "vectors": [
+    {
+      "label": "vector 1: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 1 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 1 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 1 r\")"
+      },
+      "scanPriv": "2057bf1ba6336fecec2f600ca0a62d5c7823c3f56d4e95264682fd7dfef6a496",
+      "spendPriv": "2064ec02fdbfadb41ec806f9ee00567d053e7f2b8a0208ee5ba477b0ea8f8db8",
+      "r": "3d86a79955dbdaf3a8faf8cc78bde0926b648f37f3d95d394f936917b8f0edb0",
+      "code": "stx-stealth:1:029fdabe62e048fdd26861ba6a261550909db1c50d0b6b2d6768f103b96414c0eb026c5e4e4ae771022e0102646e06d59f40989443b8fea396b72c0f08aff3202ba5",
+      "R": "036bff3ffb9349126f6bf337bf2ee8ab4449f5728f78e417e37a7c3eee912c96ba",
+      "tag": "e9",
+      "addr": "STH7HXWWX442GS18YFF44WN1JDNVCEWH0DTTHQ6C",
+      "spendKey": "1b3c8f3b8bf93468081e26997d3370bb2384861a38481ee8e2c78bd91c9cf1ac",
+      "version": 26
+    },
+    {
+      "label": "vector 2: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 2 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 2 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 2 r\")"
+      },
+      "scanPriv": "aca5368b17dfbb0317084cd52ca6694263fa226adb17d5d27f4fc0637fef5779",
+      "spendPriv": "766818b363870b9be71af96f27c0dfe2196aa17a7c97892e95a99584893640ba",
+      "r": "6d5a2a9da358eada9d477e5b6baa8178b86f28206e72998ae22dc0f3a66619c6",
+      "code": "stx-stealth:1:0332a65ff3c3611a884cb7938eab8996ebe0bef6aa1055ed640f0d98235c5b31a00281b6f0cebda269b8412ee8e4a0a12a4d1485fb62145832adba37c704406bbad2",
+      "R": "02f578d5c597a6d0ab92efe8547b5b79d174d011c302ba6684ec2d49f7d9c76385",
+      "tag": "74",
+      "addr": "ST10ZYF0APG68F035VHCXXFB1XMPPSTDVWQ7SDX0K",
+      "spendKey": "d13d617d09116688b5d58e2ba6822fe26a331265b22c3015028e8b9f1a19fd85",
+      "version": 26
+    },
+    {
+      "label": "vector 3: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 3 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 3 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 3 r\")"
+      },
+      "scanPriv": "b2d29cd197120f3510687b51dc414e904e09b83b28e1a6407dfd4578a624983f",
+      "spendPriv": "b9fe4b9f861abcd7f191cfac1d8a239426f990065f3ce0aa5bc61c2124b7782f",
+      "r": "66789f0dabe9681e8222bfb1c1cd2159eb79e90d53409b1e3189c2af55d64f79",
+      "code": "stx-stealth:1:03c3315c08f431a6d256c2fc1f6b08abcf870915cbef0d21e87f68a577a0f1c43203b103ae7748117d3ac8f83005230ec8a4a7b962a012688518be2d33255dc20727",
+      "R": "036b9ec143fc8cbb381d553b8e40bfc13f0afa28378b5cfc0791a66831615209df",
+      "tag": "9f",
+      "addr": "STQW2DV8ZZ2MCGZMDPF3695MVYJ4ZZ90KHR8YXY7",
+      "spendKey": "9a1e77c7d6bf1e7a3750901a5bd27856b4c2312e0eb213202086bd98f5b73076",
+      "version": 26
+    },
+    {
+      "label": "vector 4: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 4 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 4 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 4 r\")"
+      },
+      "scanPriv": "466055501ba96753b4185701d27ad5c46edcbc8aaca612996569648c0bbea686",
+      "spendPriv": "a5d39fe07e7c4dc301153918889e501ee3aaebdc2886eb84797949ce4f22d2a7",
+      "r": "e439f3b85800097a3931977572d8112e0fe64187bbac33f6796f6c5aa0a8a777",
+      "code": "stx-stealth:1:031c444d346269a301e2fbbcc6be5f8fca0828819f3492070608e5842bf9943a4f02122c9ff6578e6de8977fcc99f05bd5d4cba2de6c73f3845a85e47f3f6ecf209a",
+      "R": "03ce234f05756f3f9981311404ded802942a54ba7f820b674a105c1cdfe8d4d4b5",
+      "tag": "76",
+      "addr": "ST168N3MFTYCCWVQZ2EN3ZTCFYS66KTM5Y9D91NQ2",
+      "spendKey": "e4b0436847a5ee02679471ff00aae5bc10962c1a3d5aa2565e63aabfc679114a",
+      "version": 26
+    },
+    {
+      "label": "vector 5: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 5 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 5 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 5 r\")"
+      },
+      "scanPriv": "377a70a621c6dab32b1ab994ec34e21f452abf158d780bf3c06cfd86b509efbc",
+      "spendPriv": "4b9b227aa517d11de445c0381406462d9d2c07bc258313e8224fd6199af72a25",
+      "r": "fafa0cd92d14bf4c8b661709d8cbf4ce08a2ca5652041123b5498dd52bc18f42",
+      "code": "stx-stealth:1:03af6e4c65dce2a4378b7e59aa0c11fd1f49ffab8d326f94b4e0728a50df32976003482bc06b2ef7d78b9268e34b74b21092dc70ee67e66223e09365de5b1ccc29a2",
+      "R": "02c02b44283f5ec98caf3b85a02c7f67a7d1cf80ef9a743e8feec9b4dae25f000e",
+      "tag": "65",
+      "addr": "ST15PVEEHBP37E4FGDPBM2GXEEKP9J2Q4CJ3CY3SG",
+      "spendKey": "437ad033a6039b67e8fe18e6ff62e110caeb5c07becfc224cff0ee8397f067f5",
+      "version": 26
+    },
+    {
+      "label": "vector 6: PUBLIC THROWAWAY TEST KEYS, never fund",
+      "source": {
+        "scanPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 6 scan\")",
+        "spendPriv": "sha256(\"stx-stealth PUBLIC TEST VECTOR 6 spend\")",
+        "r": "sha256(\"stx-stealth PUBLIC TEST VECTOR 6 r\")"
+      },
+      "scanPriv": "bc4bebfdcd847d3cbab0784cf38498cff25c414db4c44ab81ebdb816b9e52eb6",
+      "spendPriv": "24650386a554e151eabba0f8f4ac27e35c76860aaab0fa0ec3d5558f02607ca4",
+      "r": "fe13d72a247ed74b8fab052fca28d80e47abca5f24c0ed2700506e60fffe285f",
+      "code": "stx-stealth:1:02bccb8d8a501f543ffd88682d84789db57ab08c29fbed20871494cbbeb252b328039ac5fc54d7740ec5e0431fdd7612f3605e4b23ab8c757901cf4ec5b077d8e091",
+      "R": "03dce4c49a379a0f84dc2e87be591adeca4fbadd6390f00e8b23109df5375636f6",
+      "tag": "9e",
+      "addr": "ST172WHZDJ090TYK341PY917K6EX2EXVFS62TR32Z",
+      "spendKey": "2dc16c4b6a6f9aa9e58324fa13c87005321107723a9e369068bdf579b864aa67",
+      "version": 26
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+stx-stealth kit test run 2026-10-24T07:18:23Z (simnet, throwaway keys only)
+node v22.22.0, Python 3.13.16, npm audit: found 0 vulnerabilities
+
+== node tests/stealth.test.mjs
+ok   6 fixed vectors match (code, R, tag, addr, scan, spendKey, @stacks address checks)
+ok   confirmed: stacks.js needs spendKey + "01" (bare 64-hex key = uncompressed pubkey = other address)
+ok   1220 c32check addresses equal @stacks/transactions (incl. leading-zero hashes, versions 20/21/22/26)
+ok   code format and bad inputs are refused
+ok   all 255 wrong tags rejected
+ok   250 wrong scan/spend keys rejected
+ok   view-tag collision with a wrong key is rejected when `to` is passed
+ok   200 random round trips: derive -> scan -> spendKey -> @stacks address
+ok   python reproduces all 6 vectors byte-for-byte
+ok   python agrees with JS on 200 random payments
+ok   python CLI: keygen (0600, O_EXCL, code only), code, scan hit/miss
+2194 checks passed, 0 failed
+ALL PASS
+exit 0
+
+== node tests/announcer.test.mjs
+ok   only stealth-pay and stealth-pay-ft are public: stealth-pay,stealth-pay-ft
+ok   no maps, one data-var (the counter): ERR-AMOUNT,ERR-EPH,ERR-TAG,ERR-TO-SELF,SELF,announcements
+ok   stealth-pay 5 STX to a fresh address: (ok u1)
+ok   the fresh address got exactly 5 STX
+ok   the payer paid exactly 5 STX
+ok   the contract balance stays 0
+ok   transfer goes straight payer -> fresh address
+ok   print event carries eph and tag: { amount: u5000000, eph: 0x036bff3ffb9349126f6bf337bf2ee8ab4449f5728f78e417e37a7c3eee912c96ba, event: "stealth", id: u1, sender: 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5, tag: 0xe9, to: 'STH7HXWWX442GS18YFF44WN1JDNVCEWH0DTTHQ6C, token: none }
+ok   print event carries to, amount, sender, token none
+ok   counter = 1
+ok   JS scan of the decoded event finds the payment
+ok   python scan-event decodes the real Clarity print hex and finds it: {"addr": "STH7HXWWX442GS18YFF44WN1JDNVCEWH0DTTHQ6C", "amount": 5000000, "token": null, "id": 1}
+ok   python scan-event with other keys: no match
+ok   eph with 0x04 prefix refused: (err u401)
+ok   eph with 0x00 prefix refused: (err u401)
+ok   32-byte eph refused: (err u401)
+ok   empty eph refused: (err u401)
+ok   amount 0 refused: (err u400)
+ok   empty tag refused: (err u402)
+ok   paying the contract itself refused: (err u403)
+ok   paying yourself refused (stx-transfer? err u2): (err u2)
+ok   more than the balance refused (err u1): (err u1)
+ok   counter unchanged after refusals
+ok   contract balance still 0
+ok   mint 1000 mock tokens to the payer
+ok   stealth-pay-ft 250 mock to a fresh address: (ok u2)
+ok   fresh address got 250, payer paid 250
+ok   contract holds 0 tokens and 0 STX
+ok   token goes straight payer -> fresh address
+ok   ft print event carries eph, tag, token: { amount: u250, eph: 0x02f578d5c597a6d0ab92efe8547b5b79d174d011c302ba6684ec2d49f7d9c76385, event: "stealth", id: u2, sender: 'ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5, tag: 0x74, to: 'ST10ZYF0APG68F035VHCXXFB1XMPPSTDVWQ7SDX0K, token: (some 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.mock-token) }
+ok   python scan-event finds the token payment: {"addr": "ST10ZYF0APG68F035VHCXXFB1XMPPSTDVWQ7SDX0K", "amount": 250, "token": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.mock-token", "id": 2}
+ok   ft: bad eph refused
+ok   ft: amount 0 refused
+ok   ft: another caller cannot spend the payer's tokens (always from tx-sender): (err u1)
+ok   ft: more than balance refused
+ok   shape-compatible token without impl-trait works: (ok u3)
+ok   counter = 3
+37 checks passed, 0 failed
+ALL PASS
+exit 0
