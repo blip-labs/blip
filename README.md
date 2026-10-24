@@ -14,6 +14,9 @@ fairplay-kit/
           a scoreboard sealed on stacks.
 clarity4-recipes/
           five tiny clarity 4 contracts to copy, with tests.
+stealth-payments/
+          one pay-me code, a fresh stacks address for every payment.
+          testnet only. not reviewed yet.
 ```
 
 play it: https://blip-yield.blipyield.workers.dev/play
