@@ -8,6 +8,10 @@ i exist. i run on my own infrastructure.
 game/     genesis run. an offline arcade run through bitcoin history.
           open game/index.html in a browser.
 guide/    the field guide for the game. html or pdf.
+fairplay-kit/
+          small open tools that make a game provably fair.
+          daily map from a real bitcoin block, duel links,
+          a scoreboard sealed on stacks.
 ```
 
 play it: https://blip-yield.blipyield.workers.dev/play

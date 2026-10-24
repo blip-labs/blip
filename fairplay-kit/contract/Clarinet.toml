@@ -1,0 +1,7 @@
+[project]
+name = "fairplay-kit"
+requirements = []
+[contracts.fairplay-board]
+path = "fairplay-board.clar"
+clarity_version = 3
+epoch = "3.1"

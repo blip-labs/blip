@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Block Dodge: Fair Play Kit example</title>
+<style>
+:root{--bg:#0d0618;--panel:#170c29;--line:#3a2560;--text:#f6ecdf;--dim:#c9b8d8;--orange:#ff8a1f;--green:#14f195;--gold:#ffd23f}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#fff8ef;--panel:#fff;--line:#e3cfb5;--text:#1d1226;--dim:#5b4a66;--orange:#c45a00;--green:#0b7a4b;--gold:#9a6a00}}
+:root[data-theme="dark"]{--bg:#0d0618;--panel:#170c29;--line:#3a2560;--text:#f6ecdf;--dim:#c9b8d8;--orange:#ff8a1f;--green:#14f195;--gold:#ffd23f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.45 system-ui,sans-serif}
+.w{max-width:420px;margin:0 auto;padding:16px}h1{font-size:24px;color:var(--gold);margin:4px 0}
+.card{background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:12px;margin:10px 0}
+.k{font:700 12px ui-monospace,Menlo,monospace;color:var(--green);letter-spacing:1px;word-break:break-all}
+canvas{display:block;width:100%;aspect-ratio:3/4;background:#05030a;border-radius:14px;border:2px solid var(--orange);touch-action:none}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+button{min-height:52px;border-radius:12px;border:0;background:var(--orange);color:#160b26;font:800 17px system-ui;width:100%}
+button.g{background:transparent;border:2px solid var(--line);color:var(--text)}a{color:var(--green)}
+#msg{min-height:1.4em}
+</style></head><body><div class="w">
+<h1>Block Dodge</h1>
+<p>A tiny example of the Fair Play Kit. Today's pattern comes from a real Bitcoin block, so everyone plays the same run.</p>
+<div class="card"><div>Map from Bitcoin block <b id="bh">…</b></div><div class="k" id="hash"></div><a id="ver" target="_blank" rel="noopener">Check it yourself ↗</a></div>
+<div class="card" id="duelBox" hidden></div>
+<canvas id="c" width="300" height="400" aria-label="Block Dodge game"></canvas>
+<div class="lanes"><button data-l="0">◀ LEFT</button><button data-l="1">MIDDLE</button><button data-l="2">RIGHT ▶</button></div>
+<p id="msg" aria-live="polite"></p>
+<button id="go">▶ PLAY</button>
+<div id="share" hidden><p>Send this link to a friend. They get the same map and your score to beat.</p><button id="copy" class="g">COPY DUEL LINK</button></div>
+</div>
+<script type="module">
+import { seedFromHash, rng, verifySeed, explorerUrl } from '../seed/fairseed.js';
+import { encodeDuel, decodeDuel, result } from '../duel/duel.js';
+const $ = id => document.getElementById(id);
+// In a real game, fetch this from your own server (see seed/server.mjs). Here it's a saved real block.
+const A = await (await fetch('anchor.json')).json();
+if (!verifySeed(A.hash, A.seed)) throw new Error('seed does not match the block hash');
+$('bh').textContent = A.height.toLocaleString(); $('hash').textContent = A.hash; $('ver').href = explorerUrl(A.height);
+let duel = null;
+const q = new URLSearchParams(location.search).get('duel');
+if (q) { try { duel = decodeDuel(q); $('duelBox').hidden = false;
+  $('duelBox').innerHTML = duel.height === A.height ? `⚔ <b>${duel.name.replace(/[<>&]/g, '')}</b> scored <b>${duel.score}</b> on this map. Beat it!` : 'This duel was on a different day\'s map, so it can\'t be compared.';
+} catch (e) { $('msg').textContent = e.message; } }
+const g = $('c').getContext('2d');
+let lane = 1, rocks = [], t = 0, score = 0, alive = false, R;
+document.querySelectorAll('[data-l]').forEach(b => b.addEventListener('pointerdown', () => { lane = +b.dataset.l; }));
+// Everything random comes from the block seed, and the game steps at a fixed rate, so a run's pattern is identical everywhere.
+function start() { R = rng(A.seed); rocks = []; t = 0; score = 0; lane = 1; alive = true; $('share').hidden = true; $('msg').textContent = ''; }
+function step() {
+  t++;
+  if (t % 24 === 0) rocks.push({ l: Math.floor(R() * 3), y: -20, v: 2 + R() * 2 + t / 900 });
+  for (const r of rocks) r.y += r.v;
+  rocks = rocks.filter(r => r.y < 420);
+  if (rocks.some(r => r.l === lane && r.y > 340 && r.y < 380)) { alive = false; end(); }
+  else score++;
+}
+function draw() {
+  g.fillStyle = '#05030a'; g.fillRect(0, 0, 300, 400);
+  g.fillStyle = '#ff8a1f'; for (const r of rocks) g.fillRect(r.l * 100 + 30, r.y, 40, 40);
+  g.fillStyle = '#14f195'; g.beginPath(); g.arc(lane * 100 + 50, 360, 16, 0, 7); g.fill();
+  g.fillStyle = '#f6ecdf'; g.font = '700 16px system-ui'; g.fillText('SCORE ' + score, 10, 22);
+}
+function end() {
+  const mine = { game: 'blockdodge', day: A.day, height: A.height, hash8: A.hash.slice(0, 8), score, name: 'player' };
+  $('msg').textContent = duel ? (result(duel, mine) === 'win' ? 'You win! ' : result(duel, mine) === 'lose' ? 'They win this one. ' : '') + 'Score ' + score : 'Score ' + score;
+  $('share').hidden = false;
+  $('copy').onclick = async () => { const url = location.origin + location.pathname + '?duel=' + encodeDuel(mine); try { await navigator.clipboard.writeText(url); $('copy').textContent = 'COPIED ✓'; } catch { prompt('Copy this link', url); } };
+}
+let last = 0, acc = 0; const DT = 1000 / 60;
+function loop(ts) { acc += Math.min(100, ts - (last || ts)); last = ts; while (alive && acc >= DT) { step(); acc -= DT; } if (!alive) acc = 0; draw(); requestAnimationFrame(loop); }
+$('go').addEventListener('click', start); requestAnimationFrame(loop);
+</script></body></html>

@@ -1,0 +1,3 @@
+[network]
+name = "devnet"
+# Clarinet fills in test accounts here when you run `clarinet check`. Never put a real seed phrase in this repo.
