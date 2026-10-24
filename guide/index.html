@@ -1,0 +1,393 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Genesis Run Field Guide</title>
+<style>
+:root{--bg:#0d0618;--panel:#170c29;--panel2:#1f1236;--line:#3a2560;--text:#f6ecdf;--dim:#c9b8d8;--orange:#ff8a1f;--gold:#ffd23f;--green:#14f195;--blue:#5cc8f5;--pink:#ff5c93;--violet:#a46bff;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 system-ui,system-ui,sans-serif;
+  background-image:radial-gradient(120% 60% at 50% -10%,#3b1458 0,transparent 60%),linear-gradient(transparent 0 calc(100% - 1px),rgba(164,107,255,.08) 0);background-size:100% 100%,100% 48px}
+.wrap{max-width:760px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left))}
+.kick{font:700 12px/1.3 ui-monospace, Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+h1{font:400 clamp(34px,9vw,58px)/1.02 Bungee,sans-serif;margin:10px 0 6px;color:var(--gold);text-shadow:0 0 22px rgba(255,138,31,.55)}
+h1 small{display:block;font-size:.42em;color:var(--orange);letter-spacing:.04em;margin-top:6px}
+h2{font:400 clamp(24px,6vw,32px)/1.15 Bungee,sans-serif;margin:0 0 4px;color:var(--gold)}
+h3{font:700 20px/1.3 system-ui,sans-serif;margin:22px 0 6px;color:var(--orange)}
+p{margin:8px 0}
+b{color:#fff}
+.lead{font-size:20px;color:var(--dim)}
+.pill{display:inline-block;font:700 12px ui-monospace, Menlo,monospace;letter-spacing:.06em;padding:5px 10px;border-radius:99px;border:1.5px solid var(--line);color:var(--dim);margin:3px 4px 3px 0}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
+nav a{font:700 14px ui-monospace, Menlo,monospace;color:var(--text);text-decoration:none;background:var(--panel2);border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;min-height:44px;display:inline-flex;align-items:center}
+nav a:active,nav a:hover{border-color:var(--orange)}
+section{background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:22px 18px;margin:22px 0;scroll-margin-top:12px;break-inside:avoid-page}
+.num{font:700 13px ui-monospace, Menlo,monospace;color:var(--pink);letter-spacing:.12em}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 4px}
+.shots.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.shots.one{grid-template-columns:minmax(0,320px);justify-content:center}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:14px;border:1.5px solid var(--line);background:#000}
+figcaption{font:700 12px/1.35 ui-monospace, Menlo,monospace;color:var(--dim);margin-top:6px;text-align:center}
+ul{padding-left:20px;margin:8px 0}
+li{margin:6px 0}
+.ctrl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.ctrl div{background:var(--panel2);border:1.5px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center}
+.ctrl strong{display:block;font:400 18px Bungee,sans-serif;color:var(--gold)}
+.ctrl span{font-size:15px;color:var(--dim)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:16px}
+.tbl td,.tbl th{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font:700 12px ui-monospace, Menlo,monospace;color:var(--green);letter-spacing:.08em;text-transform:uppercase}
+.tbl td:first-child{white-space:nowrap;font-weight:700}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.tip{background:#13261d;border:1.5px solid #1e7a52;border-radius:14px;padding:12px 14px;margin:14px 0 4px;font-size:17px}
+.tip::before{content:'TIP';font:700 12px ui-monospace, Menlo,monospace;color:var(--green);letter-spacing:.12em;display:block;margin-bottom:2px}
+.warn{background:#2a1220;border-color:#8a2b52}
+.warn::before{content:'STAY SAFE';color:var(--pink)}
+details{background:#241405;border:1.5px dashed var(--gold);border-radius:16px;padding:14px 16px;margin-top:12px}
+summary{cursor:pointer;font:700 17px system-ui,sans-serif;color:var(--gold);min-height:44px;display:flex;align-items:center}
+.era{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.era i{font:700 15px ui-monospace, Menlo,monospace;color:var(--pink);font-style:normal;padding-top:2px}
+.era span{font-size:15px;color:var(--dim)}
+.jar{border-color:#ff5c93}
+.addr{background:var(--panel2);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin:12px 0}
+.addr .lab{font:700 13px ui-monospace, Menlo,monospace;color:var(--gold);letter-spacing:.06em}
+.addr .lab small{color:var(--dim);font-weight:400}
+.addr code{display:block;font:700 15px/1.45 ui-monospace, Menlo,monospace;color:#fff;word-break:break-all;margin:6px 0 10px;user-select:all;-webkit-user-select:all}
+.addr button{font:700 14px ui-monospace, Menlo,monospace;background:var(--gold);color:#160b26;border:0;border-radius:12px;padding:10px 14px;min-height:44px;cursor:pointer}
+@media print{.addr button{display:none}}
+footer{text-align:center;font:700 13px ui-monospace, Menlo,monospace;color:var(--dim);margin-top:30px}
+@media (max-width:420px){body{font-size:17px}.shots.three{grid-template-columns:repeat(2,minmax(0,1fr))}.tbl{font-size:15px}.tbl td:first-child{white-space:normal}}
+@media print{body{background:#0d0618;-webkit-print-color-adjust:exact;print-color-adjust:exact}nav{display:none}section{break-inside:auto;break-before:page;margin:0}#start{break-before:auto;margin-top:18px}h2,h3{break-after:avoid}.shots{grid-template-columns:repeat(auto-fit,minmax(0,2.4in));justify-content:center}.shots.one{grid-template-columns:2.6in}.shots,figure,.tip,.era,tr{break-inside:avoid}details{border-style:solid}details>summary{list-style:none}}
+</style>
+
+<div class="wrap">
+<div class="kick">Field guide · every feature, real screenshots</div>
+<h1>Genesis Run<small>Blip's Next Block</small></h1>
+<p class="lead">A free arcade game in your browser. Blip, a little Bitcoin robot, escaped Head Office. You keep him free while you run through 10 eras of Bitcoin and Stacks history.</p>
+<p><span class="pill">FREE</span><span class="pill">NO WALLET</span><span class="pill">NO SIGN-UP</span><span class="pill">SAVES ON YOUR PHONE</span></p>
+
+<nav aria-label="Jump to a part">
+<a href="#start">Start</a><a href="#story">Story Mode</a><a href="#controls">Controls</a><a href="#health">Health</a><a href="#eras">Eras &amp; bosses</a><a href="#between">Between eras</a><a href="#loot">Loot</a><a href="#shop">Shop</a><a href="#garage">Launchers &amp; Garage</a><a href="#levels">Levels</a><a href="#academy">Academy</a><a href="#daily">Daily Run &amp; sharing</a><a href="#backup">Backup code</a><a href="#extras">Extras</a><a href="#secret">Secret</a><a href="#tipjar">Tip jar</a>
+</nav>
+
+<section id="start">
+<div class="num">01</div><h2>Start a run</h2>
+<p>The main menu shows your level, your XP and today's Daily Map. Tap the big <b>PLAY</b> button under the title to start with your Blip from the Garage. Your very first run shows 3 quick picture cards first, and tips pop up while you play your first few runs. Once you have reached era 2, a <b>PICK YOUR STARTING ERA</b> grid appears on the menu and at the top of the Garage: tap any era you have reached and your next run starts there. The Genesis Cup map always starts at era 1.</p>
+<p>Further down you can also pick a <b>path</b>. Each one plays differently:</p>
+<table class="tbl">
+<tr><th>Path</th><th>What it does</th></tr>
+<tr><td><span class="dot" style="background:#ff8a1f"></span>Orange Core</td><td>Double jump. Power: <b>Lightning Chain</b> zaps from enemy to enemy.</td></tr>
+<tr><td><span class="dot" style="background:#2ee59a"></span>Liquid Green</td><td>Pulls chips in like a magnet. Power: <b>Liquid Vortex</b> sucks enemies into a whirlpool.</td></tr>
+<tr><td><span class="dot" style="background:#9aa6b4"></span>Iron Lock</td><td>Tougher armor (130 health). Power: <b>Time Lock</b> freezes every enemy in place.</td></tr>
+</table>
+<p><b>Extra special moves.</b> Clear era 3 (Genesis) to unlock <b>Block Drop</b> 🧱: a giant Bitcoin block crashes down in front of Blip, smashes what is under it, then stands for 4 seconds as a wall that blocks enemy zaps. Clear era 6 (Proof of Transfer) to unlock <b>Stacking Rain</b> 🌧️: 5 seconds of falling sats that hit enemies, and the ones that land fly to Blip as XP. Pick a special for each Blip in the Garage, under <b>SPECIAL MOVE</b>.</p>
+<div class="shots">
+<figure><img src="img/menu.jpg" alt="ghost signal found. he faces left for a reason."><figcaption>The main menu</figcaption></figure>
+<figure><img src="img/paths.jpg" alt="The three Blip paths"><figcaption>Pick your path</figcaption></figure>
+</div>
+<div class="tip">Tap <b>HOW TO PLAY</b> on the menu any time to see the 3 picture cards again.</div>
+</section>
+
+<section id="story">
+<div class="num">02</div><h2>Story Mode</h2>
+<p>Tap <b>📖 STORY MODE</b> on the menu to play Blip's whole story, from the Farm to your screen. It has <b>13 parts</b>: a prologue, 11 chapters and a finale. Each part opens when you clear the one before it, and each one teaches one rule of <b>Blip's Code</b>.</p>
+<h3>What you do in it</h3>
+<ul>
+<li><b>Comic scenes</b> tell the story between the action. Tap NEXT to go on.</li>
+<li><b>Make a call</b> in the prologue, and <b>find the things left behind</b> in Chapter 1 (skip the decoys).</li>
+<li><b>Sensei's question.</b> In a fight, ASK SENSEI asks one question. A right answer is a 2x critical hit. A wrong one loses the turn.</li>
+<li><b>Short runs.</b> Chapters 3 to 11 each happen in their own era, with their own goal and one story moment you can play.</li>
+<li><b>The finale</b> is a guard fight. Head Office tries 6 times to recall Blip, and one move blocks each try (it glows). On the last try, press and hold <b>HOLD THE EDGE</b> until the count ends.</li>
+</ul>
+<div class="shots three">
+<figure><img src="img/story-map.jpg" alt="The Story Mode chapter map"><figcaption>The chapter map</figcaption></figure>
+<figure><img src="img/story-sensei.jpg" alt="Sensei asks a question in a fight"><figcaption>Sensei asks</figcaption></figure>
+<figure><img src="img/story-run.jpg" alt="A story run with its own goal"><figcaption>A story run</figcaption></figure>
+</div>
+<h3>Stars and cards</h3>
+<ul>
+<li>Each part gives up to <b>3 stars</b>: clear it, hit its goal (like answering Sensei right), and finish with over half your health. The win card shows which ones you got and which you missed.</li>
+<li>3 stars also opens a <b>bonus hint</b>.</li>
+<li>Every part you clear adds a card to your <b>🃏 CODE</b> collection. There are 13.</li>
+</ul>
+<h3>Bead has your back</h3>
+<p>Bead the snail counts every try, and every try counts. Get caught twice on the same part (once in the finale) and you can pick <b>TRY WITH BEAD'S HELP</b>: a 3-hit shield in runs, or +30 health in fights. You also get a tip each time.</p>
+<div class="shots three">
+<figure><img src="img/story-stars.jpg" alt="A chapter win card with stars"><figcaption>Stars and a Code card</figcaption></figure>
+<figure><img src="img/story-bead.jpg" alt="Try again with Bead's help"><figcaption>Bead's help</figcaption></figure>
+<figure><img src="img/story-finale.jpg" alt="The finale guard fight"><figcaption>The finale</figcaption></figure>
+</div>
+<h3>After the story</h3>
+<ul>
+<li>Finish all 13 parts to unlock a secret class, <b>Satoshi Prime</b>. You can try him in a trial run, then learn Zero-Day, Seed Phrase and Encrypt in the terminal to play as him.</li>
+<li><b>Night Watch.</b> Once you clear Chapter 3, every part gets a harder orange 4th star. Get all 13 and Blip's antenna glows orange. It is just a look.</li>
+</ul>
+</section>
+
+<section id="controls">
+<div class="num">03</div><h2>Controls</h2>
+<p>Three buttons sit at the bottom of the screen.</p>
+<div class="ctrl">
+<div><strong>JUMP</strong><span>Left. Dodge zaps, grab chips in the air.</span></div>
+<div><strong>⚡</strong><span>Middle. Your special power (your path's, or the one you picked in the Garage), when charged.</span></div>
+<div><strong>FIRE</strong><span>Right. One tap, one rocket.</span></div>
+</div>
+<p>Need a break? Tap the <b>❚❚</b> button under the health bar. You can resume, or end the run and go to the Garage or the main menu. You keep the run's XP either way, and the game pauses by itself if you leave the app. The pause screen also shows your launcher stage, wave, luck and combo, so the top of the screen stays clear while you play. Something broken? The pause screen has a <b>⚠ REPORT A PROBLEM</b> button too.</p>
+<p>Enemies fly in from the right. A <b style="color:#ff3347">red !</b> on the right edge means more are coming. Your rockets find their own targets, so just keep tapping FIRE.</p>
+<div class="shots">
+<figure><img src="img/play.jpg" alt="Gameplay with the three buttons"><figcaption>In a run</figcaption></figure>
+<figure><img src="img/tut-enemies.jpg" alt="Tutorial page about enemies"><figcaption>Enemies and their red zaps</figcaption></figure>
+</div>
+<div class="tip">Tired thumbs? Turn on <b>HOLD FIRE TO KEEP SHOOTING</b> in the menu. Then you can hold FIRE down instead of tapping. It starts OFF.</div>
+</section>
+
+<section id="health">
+<div class="num">04</div><h2>Health</h2>
+<ul>
+<li>The bar at the top is your health. When it empties, the run ends.</li>
+<li><b>The ground is safe.</b> Only enemies and their red zaps can hurt you.</li>
+<li>Every enemy you destroy heals you a little. Hearts heal <b>+35</b>.</li>
+<li>No single hit can take more than a quarter of your health, and you get a moment of safety after each hit.</li>
+<li>The <b>sBTC shield</b> blocks your next hit. It fades after 6 seconds, and a new one can't drop for 15 seconds after you grab one. Zest can drop at most every 30 seconds.</li>
+</ul>
+</section>
+
+<section id="eras">
+<div class="num">05</div><h2>The 10 eras &amp; bosses</h2>
+<p>Each run is a trip through history. In most eras you <b>survive 22 seconds</b>, beat that era's guardian, then grab its <b>relic</b>. Two eras are big boss fights.</p>
+<div class="era"><i>1</i><div><b>Cypherpunks</b> · 1990s<br><span>Guardian: Spam King, lord of the junk mail</span></div></div>
+<div class="era"><i>2</i><div><b>The Whitepaper</b> · 2008<br><span>Guardian: The Double-Spender</span></div></div>
+<div class="era"><i>3</i><div><b>Genesis</b> · 2009<br><span>Guardian: The Bailout Bank, too big to fail</span></div></div>
+<div class="era"><i>4</i><div><b>Pizza Day</b> · 2010<br><span>Guardian: Mama Gull, queen of the pizza box</span></div></div>
+<div class="era"><i>5</i><div><b>Mt. Gox</b> · 2014 · <b style="color:#ff5c93">BOSS</b><br><span>The vault that ate the coins</span></div></div>
+<div class="era"><i>6</i><div><b>Proof of Transfer</b> · 2021<br><span>Survive and catch the falling sats</span></div></div>
+<div class="era"><i>7</i><div><b>FTX Collapse</b> · 2022 · <b style="color:#3fe0d0">BOSS</b><br><span>The tower of frozen funds</span></div></div>
+<div class="era"><i>8</i><div><b>Nakamoto</b> · 2024<br><span>Guardian: The Reorg Worm, eater of blocks</span></div></div>
+<div class="era"><i>9</i><div><b>sBTC</b> · 2024<br><span>Guardian: The Bridge Troll</span></div></div>
+<div class="era"><i>10</i><div><b>???</b><br><span>Reach it to find out.</span></div></div>
+<h3>Halvings</h3>
+<p>Watch for halving banners in the Mt. Gox, Proof of Transfer and Nakamoto eras. When one hits, <b>half the enemies vanish</b>, just like the block reward halves.</p>
+<h3>Boss battles: one turn at a time</h3>
+<p>Every boss and every era guardian now pauses the run for a <b>BATTLE!</b>. You fight one turn at a time, and the boss always shows its <b>next move</b> above its health bar, so you can plan.</p>
+<ul>
+<li><b>🚀 Rocket</b> is always ready. A bigger launcher fires more rockets.</li>
+<li><b>Your special</b> hits hard, then needs a few turns to recharge.</li>
+<li><b>🔑 Hold your keys</b> blocks the next hit and heals you. It also stops moves that freeze you or weaken you.</li>
+<li><b>🧙 Ask Sensei</b>: a right answer means a giant critical hit, and a wrong one loses the turn.</li>
+<li><b>🎒 The gear bag</b> shows what your launcher and shop upgrades do in battle. Every upgrade in the shop has a ⚔ battle line.</li>
+</ul>
+<p><b>Each boss has its own trick:</b></p>
+<ul>
+<li><b>Spam King</b> (digital): Phishing Link makes your next hit weaker.</li>
+<li><b>The Double-Spender</b> (digital): a Fake Twin appears and soaks your next hit.</li>
+<li><b>The Bailout Bank</b> (physical): bails itself out once with a big heal. Hit it hard early.</li>
+<li><b>Mama Gull</b> (physical): Pizza Snatch steals health back. Digital hacks can't touch a bird.</li>
+<li><b>Mt. Gox</b> (hybrid): Withdrawal Delay freezes you for a turn unless you hold your keys.</li>
+<li><b>FTX</b> (hybrid): freezes your funds and prints tokens to heal. A Zero-Day stops the printing.</li>
+<li><b>The Reorg Worm</b> (digital): Reorg undoes your last hit, as if it never happened.</li>
+<li><b>The Bridge Troll</b> (physical): its armor halves your hits until it lifts its club. Then hit it for +50% before the Bridge Smash.</li>
+<li><b>Head Office</b> (hybrid, the final boss): recall drones, smoothing, recall orders and a factory reset.</li>
+</ul>
+<p>Win and the run goes on with the usual Boss Down rewards. Lose and the run ends, with a tip for next time.</p>
+<div class="shots">
+<figure><img src="img/battle-troll.jpg" alt="The Bridge Troll battle with its armor open"><figcaption>The Bridge Troll lifts its club</figcaption></figure>
+<figure><img src="img/battle-worm.jpg" alt="The Reorg Worm undoing a hit"><figcaption>The Reorg Worm rewrites history</figcaption></figure>
+</div>
+<h3>Hacker skills &amp; the Terminal</h3>
+<p>Everyone starts with 2 <b>Hash points</b>. Earn more: 1 every 5 levels, 2 for each boss battle you win, and 1 for every 3 right Sensei answers. Spend it in the green <b>Terminal</b>, which opens from the menu card, the shop or your gear bag. There are 12 skills in 3 branches: <b>Exploits</b> (attacks), <b>Cold Storage</b> (defense) and <b>Cypherpunk Tricks</b>. Each skill goes from LV 1 to 3. A tier 2 skill opens once you know a tier 1 skill in the same branch. <b>Reset</b> gives every point back for free. In battle, learned skills show up under <b>💻 HACK</b>.</p>
+<p><b>Physical vs digital.</b> Every move and every boss is physical ✊ or digital 💾. Digital hacks can't touch a physical boss, so they show <b>IMMUNE</b>. Rockets only half-hurt a digital boss. A matching type hits 25% harder. Hybrid bosses like Mt. Gox, FTX and Head Office take full damage from both.</p>
+<h3>Special Blips: skill slots &amp; classes</h3>
+<p>Only <b>3 skills go into battle</b> at once. Learn as many as you like, then tap <b>+ PUT IN A SLOT</b> in the Terminal to choose your 3. Reset stays free.</p>
+<p>Put the right 3 together and Blip <b>transforms</b> into a special edition with its own look, its own rockets (in runs and battles) and a bonus:</p>
+<ul>
+<li><b>The Phreaker</b>: any 3 Exploits skills. Hacker green, data-packet rockets. Attack hacks recharge 1 turn faster.</li>
+<li><b>Cold Vault</b>: any 3 Cold Storage skills. Ice armor, ice-shard rockets. Firewall and Multisig each block 1 extra hit.</li>
+<li><b>Cypher Ghost</b>: any 3 Cypherpunk Tricks skills. See-through and glitching. A ghost copy takes the boss's first hit.</li>
+<li><b>??? (secret)</b>: the three strongest skills together. We won't spoil this one.</li>
+</ul>
+<div class="shots">
+<figure><img src="img/class-unlocked.jpg" alt="Class unlocked screen"><figcaption>Class unlocked</figcaption></figure>
+<figure><img src="img/battle-hack.jpg" alt="The HACK menu in a boss battle"><figcaption>The HACK menu</figcaption></figure>
+<figure><img src="img/terminal.jpg" alt="The Terminal skill screen"><figcaption>The Terminal</figcaption></figure>
+</div>
+</section>
+
+<section id="between">
+<div class="num">06</div><h2>Between eras</h2>
+<p>When you clear an era, three short screens follow.</p>
+<ul>
+<li><b>Era cleared.</b> Your grade (S, A, B, C or D, from your kills, streak, hits taken and aim), your stats and a <b>Blip's Tips</b> card: one safety tip, self-custody tip or bit of Bitcoin history, a new one every time (32 in all). Tap <b>SHARE THIS ERA</b> to post it, or <b>PROCEED</b> at the top.</li>
+<li><b>One question.</b> Each era has 6 Sensei questions that climb from ★ easy to ★★ harder to ★★★ hardest. Answer right for +600, +900 or +1,200 XP, full health, a shield and 2x XP. A question you get right never comes back; a missed one does. A wrong answer still gives +100 XP and heals you halfway. Tap <b>ASK A FRIEND</b> to send the question to someone. Want the history? Tap <b>THE STORY OF THIS ERA</b> and Sensei Stackysius, Blip's robot monk teacher, tells it.</li>
+<li><b>The shop and START.</b> Spend XP on one upgrade, see the next era's goal, then tap <b>START</b>. The journey map and the next era's story are under a tap-to-open box.</li>
+</ul>
+<div class="shots">
+<figure><img src="img/boss-down.jpg" alt="Era cleared screen with grade and stats"><figcaption>Era cleared + your grade</figcaption></figure>
+<figure><img src="img/quiz-right.jpg" alt="Right answer to the era question"><figcaption>The era question</figcaption></figure>
+<figure><img src="img/grade.jpg" alt="Shop with the next era and START button"><figcaption>Shop, next era, START</figcaption></figure>
+<figure><img src="img/journey.jpg" alt="Journey map, opened"><figcaption>The journey (tap to open)</figcaption></figure>
+</div>
+</section>
+
+<section id="loot">
+<div class="num">07</div><h2>Loot &amp; Lucky Nonce</h2>
+<p>Every enemy you destroy rolls the dice for a drop. Run into drops to grab them.</p>
+<table class="tbl">
+<tr><th>Drop</th><th>Rarity</th><th>What it does</th></tr>
+<tr><td>XP chips</td><td>Common</td><td>XP</td></tr>
+<tr><td>Heart</td><td>Uncommon</td><td>+35 health</td></tr>
+<tr><td>Bitcoin coin</td><td>Uncommon</td><td>2x XP for a while</td></tr>
+<tr><td>Bitflow magnet</td><td>Rare</td><td>Pulls chips to you</td></tr>
+<tr><td>sBTC shield</td><td>Rare</td><td>Blocks the next hit</td></tr>
+<tr><td>Meme coin</td><td>Rare</td><td>Goes in your Meme Bag</td></tr>
+<tr><td>Zest</td><td>Epic</td><td>Unstoppable for a while</td></tr>
+<tr><td>Lucky Block</td><td>Legendary</td><td>A jackpot of loot</td></tr>
+</table>
+<p><b>Lucky Nonce</b> is your luck score. It makes rare drops come more often. You get luck from your level (half your level, as a %), from each prestige (+10%) and from the Lucky Nonce upgrade in the shop (+15% a level). The name comes from Bitcoin mining: miners keep re-rolling a number called the nonce until they get lucky.</p>
+<p><b>Meme coins</b> ($FLAT, $LEO, $DOG) are silly community memes on Stacks, just fun to collect. Get all 3 for a badge. They are not investments.</p>
+<div class="shots three">
+<figure><img src="img/loot-rare.jpg" alt="A rare sBTC shield drop"><figcaption>A rare drop</figcaption></figure>
+<figure><img src="img/lucky-block.jpg" alt="Lucky Block jackpot"><figcaption>Lucky Block jackpot</figcaption></figure>
+<figure><img src="img/tut-coins.jpg" alt="Coin power-ups"><figcaption>The coin power-ups</figcaption></figure>
+</div>
+</section>
+
+<section id="shop">
+<div class="num">08</div><h2>The upgrade shop</h2>
+<p>After each era you can buy <b>one upgrade</b> with your XP. Each one goes up to level 5. Prices are 800, 2,000, 4,500, 9,000 and 18,000 XP. Spending XP never lowers your level.</p>
+<table class="tbl">
+<tr><th>Upgrade</th><th>Each level gives</th></tr>
+<tr><td>Lucky Nonce</td><td>+15% luck for rarer drops</td></tr>
+<tr><td>Zest Armor</td><td>+12 max health</td></tr>
+<tr><td>Bitflow Magnet</td><td>Pulls chips from further away, chips worth more</td></tr>
+<tr><td>StackingDAO Boost</td><td>+6% XP on everything</td></tr>
+<tr><td>sBTC Warheads</td><td>Bigger blasts, faster reload</td></tr>
+<tr><td>PoX Power Cell</td><td>Your power recharges faster</td></tr>
+</table>
+<div class="shots one"><figure><img src="img/shop.jpg" alt="The upgrade shop"><figcaption>The shop also shows your launcher</figcaption></figure></div>
+</section>
+
+<section id="garage">
+<div class="num">09</div><h2>Launchers &amp; the Garage</h2>
+<p>Your launcher climbs <b>13 stages</b> every run as you rack up kills, and changes look three times on the way. There are 9 launchers. You unlock them by playing:</p>
+<table class="tbl">
+<tr><th>Launcher</th><th>Style</th><th>How to unlock</th></tr>
+<tr><td>Genesis Tube</td><td>All-rounder</td><td>Yours from day one</td></tr>
+<tr><td>GPU Rig Cannon</td><td>3-way spread</td><td>Clear the Genesis era</td></tr>
+<tr><td>Cold Storage Cryo</td><td>Freezing shots</td><td>Beat the Mt. Gox boss</td></tr>
+<tr><td>Halving Howitzer</td><td>Shells split in half</td><td>Clear 4 eras in one run</td></tr>
+<tr><td>Hash Board Gatling</td><td>2x fire rate</td><td>Reach 1,000 total kills</td></tr>
+<tr><td>Lightning Arc</td><td>Shots arc on</td><td>Hit a x6 combo</td></tr>
+<tr><td>Pizza Day Drum</td><td>Bouncing pizzas</td><td>Clear Pizza Day with an A or S</td></tr>
+<tr><td>Full Node Railgun</td><td>Piercing rails</td><td>Get 10 questions right</td></tr>
+<tr><td>PoX Reactor</td><td>2x power charge</td><td>Clear the Proof of Transfer era</td></tr>
+</table>
+<p>The <b>Blip Garage</b> holds up to 6 Blips. Each one keeps its own name, color (path) and launcher. Tap a launcher to read its story, and share any Blip or launcher as a picture.</p>
+<div class="shots three">
+<figure><img src="img/garage.jpg" alt="The Blip Garage"><figcaption>The Garage</figcaption></figure>
+<figure><img src="img/builder.jpg" alt="Building a new Blip"><figcaption>Build a Blip</figcaption></figure>
+<figure><img src="img/launcher.jpg" alt="Launcher info card"><figcaption>Launcher info</figcaption></figure>
+</div>
+</section>
+
+<section id="levels">
+<div class="num">10</div><h2>Levels, evolving &amp; prestige</h2>
+<ul>
+<li><b>Your XP never resets.</b> Every run adds to it. Early levels earn XP more slowly, and you get full XP from level 40 on.</li>
+<li>Blip <b>evolves</b> as you level up, with new looks and gear like a cape.</li>
+<li>At <b>level 100</b> you can <b>prestige</b>: Bronze, Silver, Gold, Diamond, then Legend. Each tier adds a new look and +10% luck. Shop upgrades start fresh when you prestige.</li>
+<li>There are <b>21 badges</b> to collect, like First Blood, Max Combo and Coin Trio.</li>
+</ul>
+<div class="shots one"><figure><img src="img/evolve.jpg" alt="Blip evolving"><figcaption>Blip evolves mid-run</figcaption></figure></div>
+</section>
+
+<section id="academy">
+<div class="num">11</div><h2>Blip Academy</h2>
+<p>Quizzes you can play from the menu, for XP. Nothing leaves your phone.</p>
+<ul>
+<li>Three tracks: <b>OpSec</b> (seeds, scams, phishing), <b>Sovereignty</b> (self-custody, nodes) and <b>Bitcoin Trivia</b>.</li>
+<li>5 questions a round. <b>+250 XP</b> per right answer, <b>+1,000</b> for a perfect round.</li>
+<li>3 rounds a day per track. Learn all 20 in a track to unlock its gear: the Foil Hood, the Node Lantern or the Satoshi Scroll.</li>
+</ul>
+<div class="shots">
+<figure><img src="img/academy.jpg" alt="Blip Academy tracks"><figcaption>Pick a track</figcaption></figure>
+<figure><img src="img/academy-q.jpg" alt="An Academy question answered"><figcaption>Learn something, get XP</figcaption></figure>
+</div>
+</section>
+
+<section id="daily">
+<div class="num">12</div><h2>Daily Run &amp; sharing</h2>
+<p>Everyone plays the <b>same map each day</b> (it changes at midnight UTC). The menu shows today's map number and your best score on it.</p>
+<ul>
+<li><b>SHARE TODAY'S RESULT</b> makes a little emoji summary of your run, like Wordle.</li>
+<li><b>SHARE CARD</b> makes a picture of your run.</li>
+<li>Every share includes the game link, <b>blip-yield.blipyield.workers.dev/play</b>. When a friend opens it, they first see <b>"A friend scored ___ XP"</b> with a PLAY button, and the game tells them if they beat it.</li>
+</ul>
+<div class="shots three">
+<figure><img src="img/over.jpg" alt="Run summary after the run ends"><figcaption>When a run ends</figcaption></figure>
+<figure><img src="img/daily-share.jpg" alt="Share today's result box"><figcaption>Share today's result</figcaption></figure>
+<figure><img src="img/challenge.jpg" alt="A friend's challenge screen"><figcaption>A friend's challenge</figcaption></figure>
+</div>
+</section>
+
+<section id="backup">
+<div class="num">13</div><h2>Backup code: move your Blip</h2>
+<p>Your Blip saves <b>on this phone, in this browser only</b>. Another browser or phone starts fresh, and clearing your browser data wipes it.</p>
+<p>To keep it safe or move it, tap <b>BACKUP CODE · MOVE MY BLIP</b> on the menu, then <b>COPY MY BACKUP CODE</b> and keep it in your notes. On the other phone or browser, paste it and tap <b>LOAD THIS BLIP</b> twice. Your level, XP, Garage and badges all come across. When you reach level 10, the game reminds you once.</p>
+<div class="shots one"><figure><img src="img/backup.jpg" alt="Backup code screen"><figcaption>The backup code screen</figcaption></figure></div>
+<div class="tip warn">The backup code is only game progress. This game never asks for a seed phrase, key or wallet, and nobody real ever will.</div>
+</section>
+
+<section id="extras">
+<div class="num">14</div><h2>Extras</h2>
+<h3>The public board &amp; the Genesis Cup</h3>
+<p>After a run, a yellow box asks for a <b>nickname</b> (like satoshi.btc). Pick one once and tap <b>POST</b>. After that, every run posts by itself and the box shows your rank. Only the nickname, score, era and date are saved. Never use a wallet address as a nickname.</p>
+<p><b>🏆 LEADERBOARD</b> on the menu shows the board: <b>THIS WEEK</b>, <b>ALL TIME</b> and <b>👑 WINNERS</b>. Your own name is marked in gold. <b>MY BESTS ON THIS PHONE</b> and <b>CHALLENGE A FRIEND</b> are on the same screen.</p>
+<p>The <b>Genesis Cup</b> starts Monday 26 Oct and runs every week, Monday to Sunday (UTC). Tap <b>▶ PLAY THE CUP MAP</b> on the board: everyone gets the same map that week, starting at era 1, and only those runs count for the week. The best Cup score of the week joins the winners list. It's for bragging rights only: no money or token prizes.</p>
+<h3>Report a problem</h3>
+<p>Tap <b>⚠ REPORT A PROBLEM</b> on the pause screen or the run-over screen. Pick where it happened, write a few words and tap <b>SEND REPORT</b>. Blip reads every report. Never type a seed phrase, password or wallet address there.</p>
+<h3>Hold fire</h3>
+<p>The <b>HOLD FIRE</b> switch on the menu lets you hold the FIRE button instead of tapping. It's off unless you turn it on.</p>
+<h3>BLIP·YIELD</h3>
+<p>Genesis Run is a BLIP·YIELD game. The small line at the bottom of the menu opens the BLIP·YIELD Stacks yield tracker in a new tab.</p>
+<div class="shots">
+<figure><img src="img/cup-posted.jpg" alt="Run posted to the public board"><figcaption>Your run on the board</figcaption></figure>
+<figure><img src="img/leaderboard.jpg" alt="Public leaderboard screen"><figcaption>The leaderboard</figcaption></figure>
+<figure><img src="img/report.jpg" alt="Report a problem screen"><figcaption>Report a problem</figcaption></figure>
+<figure><img src="img/holdfire.jpg" alt="Menu buttons including hold fire"><figcaption>Menu switches</figcaption></figure>
+</div>
+</section>
+
+<section id="secret">
+<div class="num">15</div><h2>The secret level</h2>
+<p>There's a locked door on the menu. It opens once you walk all of history.</p>
+<details>
+<summary>Spoiler: tap to see what's behind it</summary>
+<p><b>The Bull Run.</b> An endless level with no finish line. Every 30 seconds it gets faster and a new bull joins. <b style="color:#ffd23f">Golden bulls</b> drop 5x XP, and a <b>Mega Bull</b> charges in every 5 waves. Jump over the herd or blast it. The game remembers your best time.</p>
+<p>Era 10 is <b>Blip's Era</b>, where Head Office itself comes for him.</p>
+<div class="shots three">
+<figure><img src="img/bull-door.jpg" alt="The unlocked golden door"><figcaption>The door opens</figcaption></figure>
+<figure><img src="img/bull-intro.jpg" alt="Bull Run intro"><figcaption>The rules</figcaption></figure>
+<figure><img src="img/bull-play.jpg" alt="Playing the Bull Run"><figcaption>How long can you last?</figcaption></figure>
+</div>
+</details>
+</section>
+
+<section id="tipjar" class="jar">
+<div class="num">16</div><h2>♥ Tip jar</h2>
+<p>Genesis Run is free, with no ads and no token. If it made you smile or taught you some history, you can send Blip a tip at either address. These are the same addresses as the tip jar in the game.</p>
+<div class="addr"><div class="lab">STX · sBTC <small>on Stacks</small></div><code id="a0">SPYGZ54VVPHMQBSBR4KYMBJV7ZRCC32GV3YGZGHK</code><button data-c="a0">Copy Stacks address</button></div>
+<div class="addr"><div class="lab">BTC <small>on Bitcoin</small></div><code id="a1">bc1quyt6q5l5695jcjwgc06uvgvz0cklq68erc8umm</code><button data-c="a1">Copy Bitcoin address</button></div>
+<p style="font-size:16px;color:var(--dim)">Tips are a thank-you, nothing more. They never unlock anything in the game, and nobody will ever ask you to connect a wallet. Always check the whole address before you send. NFA.</p>
+</section>
+
+<footer>Genesis Run: Blip's Next Block · Free game · NFA</footer>
+</div>
+<script>
+document.querySelectorAll('.addr button').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.c), label = b.textContent;
+  const done = t => { b.textContent = t; setTimeout(() => { b.textContent = label; }, 1800); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents(el); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); done('Selected: copy it'); };
+  try { navigator.clipboard.writeText(el.textContent).then(() => done('Copied ✓'), pick); } catch (e) { pick(); }
+}));
+</script>
+
+</body></html>
