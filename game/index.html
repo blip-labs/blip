@@ -69,7 +69,7 @@ canvas{width:100%;height:100%;display:block;border-radius:22px;box-shadow:0 0 0 
 .rsec{width:100%;text-align:left} .rh{font:900 14px var(--display);color:#ffd23f;letter-spacing:1px;margin:4px 0 6px} .rg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 .t3{--c:#fff;background:#241640;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column} .t3 b{font:900 22px var(--display);color:var(--c);line-height:1.15;overflow-wrap:normal} .t3 span{font:600 13px var(--display);color:#d8cff0} .t3.wide{grid-column:1/-1} .t3 .gr{display:flex;gap:18px;font-size:24px} .t3 .gr small{font-size:18px;color:#d8cff0;margin-left:3px}
 .rnote{font:600 12px var(--display);color:#a99bc0} #recClose{width:100%;min-height:52px;flex:none}
-.note.chal{color:#ffd23f;font-size:13px;letter-spacing:1px} .fpchip{display:block;margin:6px auto;padding:7px 12px;min-height:0;font:700 12px var(--mono);letter-spacing:1px;background:#0e2a1e;color:#14f195;border:1.5px solid #14f195;border-radius:12px;width:auto} .fpsheet{z-index:45;background:#0b0618} .fpsheet .k{font:700 12px var(--mono);color:#14f195;word-break:break-all;margin:6px 0} .fpsheet ol{text-align:left;font-size:14px;line-height:1.5;padding-left:20px} .fpsheet a{color:#14f195} .fpseal{margin:10px 0;padding:10px;border:1.5px solid #ffd23f;border-radius:14px;text-align:left;font-size:13px} .fpseal b{color:#ffd23f} .fpseal a{color:#14f195} .fpseal .k{font:700 11px var(--mono);color:#14f195;word-break:break-all} .note.chal.win{color:#14f195}
+.note.chal{color:#ffd23f;font-size:13px;letter-spacing:1px} .hillbig{background:linear-gradient(135deg,#3a1d00,#170c29);color:#ffd23f;border:2px solid #ffd23f} .hillbig small{display:block;color:#f6ecdf} .hillov{z-index:45;background:#0b0618;text-align:center} .hillart{display:block;margin:10px auto;width:100%;max-width:280px} .hking{font:800 22px system-ui,sans-serif;color:#f6ecdf} .hxp{font:900 26px var(--mono);color:#14f195} .hprize{border:2px solid #ffd23f;border-radius:14px;padding:8px;margin:10px 0;color:#ffd23f;font:800 14px system-ui,sans-serif} .hlist{text-align:left;width:100%} .hr{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #2a1a45;padding:8px 2px;font:600 14px system-ui,sans-serif} .hr b{color:#ffd23f} .hr small{color:#8a7aa0;font:600 11px var(--mono)} .hr a{color:#14f195;font:700 12px var(--mono)} .hlock{color:#14f195} .hrules{text-align:left;font-size:15px;line-height:1.5;padding-left:20px} .hillbox{margin:10px 0;padding:12px;border:2px solid #ffd23f;border-radius:16px;text-align:center} .hbig{font:900 28px system-ui,sans-serif;color:#ffd23f;margin:4px 0;text-shadow:0 0 14px rgba(255,210,63,.45)} .hchk{text-align:left;font:600 14px system-ui,sans-serif;margin:10px 0;color:#14f195} .hchk div{margin:4px 0} .hsign{background:#5a3fd6;color:#fff} #hillSt.err{color:#ff5d5d} #hillSt.ok{color:#14f195} .fpchip{display:block;margin:6px auto;padding:7px 12px;min-height:0;font:700 12px var(--mono);letter-spacing:1px;background:#0e2a1e;color:#14f195;border:1.5px solid #14f195;border-radius:12px;width:auto} .fpsheet{z-index:45;background:#0b0618} .fpsheet .k{font:700 12px var(--mono);color:#14f195;word-break:break-all;margin:6px 0} .fpsheet ol{text-align:left;font-size:14px;line-height:1.5;padding-left:20px} .fpsheet a{color:#14f195} .fpseal{margin:10px 0;padding:10px;border:1.5px solid #ffd23f;border-radius:14px;text-align:left;font-size:13px} .fpseal b{color:#ffd23f} .fpseal a{color:#14f195} .fpseal .k{font:700 11px var(--mono);color:#14f195;word-break:break-all} .note.chal.win{color:#14f195}
 #bak textarea{width:100%;max-width:330px;min-height:96px;background:#120818;color:#fff2e2;border:1.5px solid #7c6cff;border-radius:12px;padding:8px;font:600 11px ui-monospace,Menlo,monospace;word-break:break-all} #bak .ok{color:#14f195;font-weight:800} #bak .bad{color:#ff5c93;font-weight:800}
 .v2share{width:100%;min-height:48px;margin:2px 0;background:#2a1d5a;color:#fff;border:2px solid #7c6cff;font:900 16px var(--display);border-radius:14px;box-shadow:0 0 12px #7c6cff80}
 .v2g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}
@@ -543,6 +543,7 @@ details.more summary:after{content:' ▾';color:#ffd23f} details.more[open] summ
   <canvas id="c" width="720" height="1280" aria-label="Night Watch game"></canvas>
   <button id="pauseBtn" aria-label="Pause" hidden>❚❚</button>
   <div class="ov fpsheet" id="fpSheet" hidden></div>
+  <div class="ov hillov" id="hillOv" hidden></div>
   <div class="ov" id="menu">
   <div class="mMain" id="mMain">
     <div class="note chal" id="chalNote" hidden></div>
@@ -550,6 +551,7 @@ details.more summary:after{content:' ▾';color:#ffd23f} details.more[open] summ
     <div class="grsub">▸ BLIP'S NEXT BLOCK ◂</div>
     <button id="playBtn">▶ PLAY<small id="playSub"></small></button>
     <button id="prestigeM" hidden>PRESTIGE READY ★</button>
+    <button id="hillBig" class="hillbig" hidden>⛰ KING OF THE HILL<small id="hillSub"></small></button>
     <button id="storyBig" data-story>📖 STORY MODE<small id="storySub"></small></button>
     <button id="menuMe" class="meCard"><img id="meImg" alt=""><span><b id="meName"></b><div class="lvl" id="menuLvl"></div></span></button>
     <div class="mTiles"><button id="tGar"><i>🛠</i>GARAGE</button><button id="tLb"><i>🏆</i>LEADERBOARD</button><button id="tAcad"><i>🎓</i>ACADEMY</button><button id="tMore"><i>⚙️</i>MORE<small>start era · terminal · tips</small></button></div>
@@ -769,7 +771,7 @@ const rng = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Mat
 const GAME_URL = 'https://blip-yield.blipyield.workers.dev/play';
 
 // v45b Genesis Cup: same-origin API on the public copy (blip-yield.blipyield.workers.dev).
-const GR_VER = 'v59', PUB = !window.claude, CUP = { info: null, run: 0, week: '' }, cupName = () => store.get('cupName', '');
+const GR_VER = 'v60', PUB = !window.claude, CUP = { info: null, run: 0, week: '' }, cupName = () => store.get('cupName', '');
 const escH = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const nickOk = n => /^[A-Za-z0-9_.\-]{2,20}$/.test(n);
 async function cupPost(name, run) {
@@ -2433,7 +2435,7 @@ function lvlHTML(total, gained) { const L = levelOf(total), a = need(L), b = nee
   return `<div class="top"><span>LEVEL <b>${L}</b></span><span>${total.toLocaleString()} XP${gained ? ' (+' + gained.toLocaleString() + ')' : ''}</span></div><div class="bar"><i data-w="${pct}"></i></div><div class="top"><span>${L >= 100 ? 'MAX LEVEL' : (b - total).toLocaleString() + ' XP to level ' + (L + 1)}</span><span>launcher stage ${curSt()}</span></div>`; }
 function showLvl(id, total, gained) { const el = $(id); el.innerHTML = lvlHTML(total, gained); const i = el.querySelector('i'); requestAnimationFrame(() => requestAnimationFrame(() => { i.style.width = i.dataset.w + '%'; })); }
 function label() { $('mapLabel').textContent = 'DAILY MAP #' + mapNo + ' · BEST ' + store.get('best' + dayKey, 0).toLocaleString(); const n = $('chalNote'), c = $('fpChip'); if (FP.a) { c.hidden = false; c.textContent = '⛓ BITCOIN BLOCK ' + (+FP.a.height).toLocaleString() + ' · ✓ VERIFY'; } if (CH) { n.hidden = false; n.textContent = '🎯 A FRIEND SCORED ' + CH.b.toLocaleString() + ' XP' + (CH.m ? ' ON MAP #' + CH.m : '') + '. BEAT IT!' + (CH.h && FP.a ? (CH.h === +FP.a.height && CH.x === FP.a.hash.slice(0, 8) ? ' SAME MAP ✓ BLOCK ' + CH.h.toLocaleString() : ' (THEIR MAP WAS A DIFFERENT DAY)') : ''); const cx = document.querySelector('#chal .cxp'); if (cx && CH.h && FP.a && !$('chalFp')) cx.insertAdjacentHTML('afterend', '<div class="note chal' + (CH.h === +FP.a.height ? ' win" id="chalFp">⛓ SAME MAP ✓ BITCOIN BLOCK ' + CH.h.toLocaleString() : '" id="chalFp">THEIR RUN WAS ON A DIFFERENT DAY\'S MAP') + '</div>'); } }
-label(); showLvl('menuLvl', store.get('xp', 0)); $('fpChip').addEventListener('click', fpOpen); fpLoad(); window.__fp = { FP, chalQ, fpSeed, rng };
+label(); showLvl('menuLvl', store.get('xp', 0)); $('fpChip').addEventListener('click', fpOpen); fpLoad(); window.__fp = { FP, chalQ, fpSeed, rng }; $('hillBig').addEventListener('click', () => hillOpen()); hillLoad(); window.__hill = { get HILL() { return HILL; }, hillLoad, hillOpen, hillAfter, get hillMsg() { return hillMsg; }, get hillDomain() { return hillDomain; } };
 const prestige = () => store.get('prestige', 0);
 const life = () => store.get('life', {}), lifeAdd = (k, v = 1) => { const L = life(); L[k] = (L[k] || 0) + v; store.set('life', L); }, lifeBest = (k, v, low) => { const L = life(); if (L[k] == null || (low ? v < L[k] : v > L[k])) { L[k] = v; store.set('life', L); } };
 // prestige tiers: each restart at level 100 earns a tier, more XP forever, and a new look
@@ -2592,7 +2594,7 @@ async function lbPost(runXp, tot) {
 
 // v45b: after a run, post it to the public board (once a nickname is picked, every run posts by itself)
 let CUPLAST = null;
-const cupRun = () => ({ xp: Math.round(S.xp), era: S.eraMax || 0, secs: Math.floor(S.t), kills: S.kills, prestige: prestige(), cup: !!(S.cupSeed && CUP.info && CUP.info.cupLive && CUP.info.seed === S.cupSeed) });
+const cupRun = () => ({ hp: hpSum(), xp: Math.round(S.xp), era: S.eraMax || 0, secs: Math.floor(S.t), kills: S.kills, prestige: prestige(), cup: !!(S.cupSeed && CUP.info && CUP.info.cupLive && CUP.info.seed === S.cupSeed) });
 function cupAfter() { const el = $('overCup'); if (!el) return; el.innerHTML = ''; CUPLAST = null; if (!PUB || S.bull || TEST() || S.t < 5 || S.xp < 1) return; CUPLAST = cupRun(); if (cupName()) cupSend(cupName()); else cupAsk(); }
 function cupAsk(err) { const el = $('overCup'); if (!el || !CUPLAST) return;
   el.innerHTML = `<div class="cupbox"><b>🏆 PUT THIS RUN ON THE PUBLIC BOARD</b><span>Pick a nickname once. After that, every run posts by itself.</span><div class="cuprow"><input id="cupNick" maxlength="20" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" placeholder="nickname, like satoshi.btc" aria-label="Nickname"><button id="cupGo">POST</button></div><em class="${err ? 'err' : ''}" id="cupErr">${err ? escH(err) : 'Letters, numbers, dot, dash or underscore. Never a wallet address.'}</em></div>`;
@@ -2603,11 +2605,74 @@ async function cupSend(nm) { const el = $('overCup'), run = CUPLAST; if (!el || 
   const r = await cupPost(nm, run); if (CUPLAST !== run) return;
   if (r && r.ok) { const A = r.all || {}, Wk = r.weekly;
     el.innerHTML = `<div class="cupbox ok"><b>${A.improved ? '★ NEW BEST ON THE BOARD' : '✓ RUN POSTED'}${A.rank ? ' · #' + A.rank + ' ALL TIME' : ''}</b><span>${Wk && Wk.rank ? `<b>#${Wk.rank}</b> in this week's Cup. ` : run.cup ? '' : CUP.info && CUP.info.cupLive ? 'Play the Cup map from the board to enter this week\'s Cup. ' : ''}Posting as <b>${escH(nm)}</b>${A.best ? ' · board best ' + A.best.toLocaleString() + ' XP' : ''}</span><div class="cuprow2"><button class="ghost" id="cupSee">🏆 SEE THE BOARD</button><button class="ghost" id="cupRen">CHANGE NAME</button></div></div>`;
-    $('cupSee').addEventListener('click', () => lbShow('over')); $('cupRen').addEventListener('click', () => { store.set('cupName', ''); cupAsk(); }); return; }
+    $('cupSee').addEventListener('click', () => lbShow('over')); $('cupRen').addEventListener('click', () => { store.set('cupName', ''); cupAsk(); }); hillAfter(nm, A.best, el); return; }
   const msg = (r && r.error) || 'The board did not answer. Your score is saved on this phone.';
   if (/nickname|letters, numbers|wallet address/i.test(msg)) { store.set('cupName', ''); return cupAsk(msg); }
   el.innerHTML = `<div class="cupbox bad"><b>⚠ NOT POSTED YET</b><span>${escH(msg)}</span><div class="cuprow2"><button class="ghost" id="cupRetry">↻ TRY AGAIN</button><button class="ghost" id="cupRep">⚠ REPORT IT</button></div></div>`;
   $('cupRetry').addEventListener('click', () => cupSend(nm)); $('cupRep').addEventListener('click', () => repOpen('score')); }
+
+// Clarity values for the Hill claim, built by hand so the game needs no library (checked against @stacks/transactions in tests).
+const hcvHex = b => [...b].map(x => x.toString(16).padStart(2, '0')).join('');
+const hcvU32 = n => [n >>> 24 & 255, n >>> 16 & 255, n >>> 8 & 255, n & 255];
+const hcvUint = n => { const o = new Array(16).fill(0); let v = BigInt(n); for (let i = 15; i >= 0; i--) { o[i] = Number(v & 255n); v >>= 8n; } return [1, ...o]; };
+const hcvAscii = s => [13, ...hcvU32(s.length), ...[...s].map(c => c.charCodeAt(0))];
+const hcvBuff = h => { const b = h.match(/../g).map(x => parseInt(x, 16)); return [2, ...hcvU32(b.length), ...b]; };
+const hcvTuple = o => { const k = Object.keys(o).sort(); return [12, ...hcvU32(k.length), ...k.flatMap(n => [n.length, ...[...n].map(c => c.charCodeAt(0)), ...o[n]])]; };
+const HILL_CHAIN = 0x80000000; // Stacks testnet
+const hillDomain = () => hcvHex(hcvTuple({ name: hcvAscii('Genesis Run Hill'), version: hcvAscii('1'), 'chain-id': hcvUint(HILL_CHAIN) }));
+const hillMsg = (name, xp, run) => hcvHex(hcvTuple({ action: hcvAscii('take-hill'), name: hcvAscii(name), xp: hcvUint(xp), run: hcvBuff(run) }));
+// v60 King of the Hill (one-off promo, TESTNET round first). Beat the king's XP with a server-checked run, then sign once
+// with your own wallet to take the Hill. The tile stays hidden until our server has /api/hill with a contract set.
+const HILL = { s: null };
+const hillTok = () => store.get('hillName', '') === cupName() ? store.get('hillTok', '') : '';
+const hillTx = t => /^0x[0-9a-f]{64}$/.test(t || '') ? 'https://explorer.hiro.so/txid/' + t + '?chain=testnet' : '';
+const hillHeld = at => { const m = Math.max(0, Math.floor((Date.now() - Date.parse(at)) / 60000)), d = Math.floor(m / 1440), h = Math.floor(m % 1440 / 60); return d ? d + (d > 1 ? ' DAYS ' : ' DAY ') + h + ' HRS' : h ? h + ' HRS ' + m % 60 + ' MIN' : m + ' MIN'; };
+const hillEnd = e => { const D = new Date(e); return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][D.getUTCDay()] + ' ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][D.getUTCMonth()] + ' ' + D.getUTCDate() + ', ' + String(D.getUTCHours()).padStart(2, '0') + ':' + String(D.getUTCMinutes()).padStart(2, '0') + ' UTC'; };
+async function hillLoad() { if (!PUB) return null; try { const c = new AbortController(), t = setTimeout(() => c.abort(), 4000), r = await fetch('/api/hill', { signal: c.signal }); clearTimeout(t); if (!r.ok) return null; const d = await r.json();
+  if (!d || !/^S[TP][0-9A-Z]+\.[a-z0-9-]+$/.test(d.contract || '') || typeof d.end !== 'string') return null; HILL.s = { ...d, past: Array.isArray(d.past) ? d.past : [] }; hillTile(); return HILL.s; } catch { return null; } }
+function hillTile() { const s = HILL.s, b = $('hillBig'); if (!b || !s || (!s.open && !s.king)) return; b.hidden = false;
+  $('hillSub').textContent = s.king ? '👑 ' + s.king.n + ' · ' + (+s.king.xp).toLocaleString() + ' XP' + (s.open ? '' : ' · WINNER') : 'NO KING YET · BE THE FIRST'; }
+const HILL_SVG = '<svg class="hillart" viewBox="0 0 280 120" aria-hidden="true"><path d="M0 120 L90 40 L140 10 L190 40 L280 120Z" fill="#2a1a45" stroke="#ff8a1f" stroke-width="3"/><path d="M140 10 L140 -2" stroke="#ffd23f" stroke-width="3"/><path d="M140 -2 L162 4 L140 10Z" fill="#ffd23f"/><text x="140" y="38" text-anchor="middle" font-size="26">👑</text></svg>';
+function hillOpen(view = 'main') { const s = HILL.s, el = $('hillOv'); if (!s) return; const k = s.king;
+  if (view === 'past') el.innerHTML = `<div class="note">📜 PAST KINGS</div><div class="hlist">${s.past.length ? s.past.map((r, i) => `<div class="hr"><span>${i ? '' : '<b>👑 </b>'}${i ? escH(r.n) : '<b>' + escH(r.n) + '</b>'}<br><small>${i ? 'took it ' + hillHeld(r.at) + ' ago' : 'now'} · ${(+r.xp).toLocaleString()} XP</small></span>${hillTx(r.txid) ? `<a href="${hillTx(r.txid)}" target="_blank" rel="noopener">tx ↗</a>` : ''}</div>`).join('') : '<p>No kings yet. Be the first!</p>'}</div><div class="note hlock">🔒 EVERY TAKE-OVER IS WRITTEN ON STACKS (TESTNET)</div><button class="ghost" id="hillBack">BACK</button>`;
+  else if (view === 'rules') el.innerHTML = `<div class="note">⛰ KING OF THE HILL</div><h2>THE RULES</h2><ol class="hrules"><li>Free to play and enter. Nothing to buy.</li><li>18 or older. Not open where contests like this are banned.</li><li>Only runs checked by the game server count. Cheating or bots means you're out.</li><li>Whoever holds the Hill at the end time (${hillEnd(s.end)}) wins the prize, sent to the wallet that signed the claim. There is a one-day check before it's paid, and the winner sends us a short screen recording of a run first.</li><li>We may only accept claims from wallets at least 7 days old with some history.</li><li>One promo, one winner. We can cancel it if something breaks, and we'll say so publicly.</li></ol><p class="note">THIS IS A TEST ROUND ON STACKS TESTNET. THE PRIZE IS 10 TEST STX, WHICH HAVE NO REAL VALUE.</p><button class="ghost" id="hillBack">BACK</button>`;
+  else el.innerHTML = `<div class="note">⛰ KING OF THE HILL · TEST ROUND</div>${HILL_SVG}<div class="hking">${k ? escH(k.n) : 'NO KING YET'}</div><div class="hxp">${k ? (+k.xp).toLocaleString() + ' XP' : 'BE THE FIRST'}</div>${k ? `<div class="note">HELD FOR ${hillHeld(k.at)}</div>` : ''}
+    <div class="hprize">🏆 Hold the Hill on ${hillEnd(s.end)}<br>and win 10 test STX</div>${s.open ? '<button id="hillGo">⛰ CHALLENGE THE HILL</button>' : '<p class="note">THE HILL IS CLOSED</p>'}<button class="ghost" id="hillPast">📜 PAST KINGS · ON STACKS</button><button class="ghost" id="hillRules">RULES</button>
+    <p class="note">Beat the king's XP, then sign once with Xverse or Leather to claim the spot. Playing never needs a wallet.</p><button class="ghost" id="hillBack">BACK</button>`;
+  el.hidden = false; el.scrollTop = 0;
+  $('hillBack').addEventListener('click', () => view === 'main' ? (el.hidden = true) : hillOpen());
+  if ($('hillPast')) $('hillPast').addEventListener('click', () => hillOpen('past'));
+  if ($('hillRules')) $('hillRules').addEventListener('click', () => hillOpen('rules'));
+  if ($('hillGo')) $('hillGo').addEventListener('click', () => { el.hidden = true; $('playBtn').click(); }); }
+// After a run posts to the board: if this nickname's board best beats the king, offer the claim.
+function hillAfter(nm, best, box) { const s = HILL.s; if (!s || !s.open || !best || !box) return; const k = s.king; if (k && (best <= k.xp || k.n.toLowerCase() === nm.toLowerCase())) return;
+  const d = document.createElement('div'); d.className = 'hillbox'; d.id = 'hillBox';
+  d.innerHTML = `<div class="note">YOUR BOARD BEST · ${best.toLocaleString()} XP</div><div class="hbig">YOU CAN TAKE<br>THE HILL!</div>${k ? `<div class="note">${escH(k.n).toUpperCase()} HAS ${(+k.xp).toLocaleString()} XP</div>` : ''}
+    <div class="hchk"><div>✓ Run checked by the game server</div>${k ? `<div>✓ Beats the king by ${(best - k.xp).toLocaleString()} XP</div>` : '<div>✓ The Hill is empty</div>'}${S && S.fpH ? '<div>✓ Same Bitcoin block map as everyone</div>' : ''}</div>
+    <button class="hsign" id="hillSign">✍ SIGN TO CLAIM THE HILL</button><div class="note">XVERSE OR LEATHER · FREE · NO MONEY MOVES</div><p id="hillSt" role="status"></p>`;
+  box.appendChild(d); $('hillSign').addEventListener('click', () => hillClaim(nm)); }
+function hillWallet() { const w = window; return w.LeatherProvider || (w.XverseProviders && (w.XverseProviders.StacksProvider || w.XverseProviders.BitcoinProvider)) || w.StacksProvider || null; }
+const hillPost = async (p, b) => { try { const r = await fetch(p, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(b) }); return { s: r.status, j: await r.json() }; } catch { return { s: 0, j: { error: 'No connection. Try again.' } }; } };
+async function hillClaim(nm) { const st = $('hillSt'), btn = $('hillSign'), say = (t, c = '') => { st.className = c; st.textContent = t; };
+  const w = hillWallet(); if (!w) return say('To sign, open this game in the Xverse or Leather app browser. Playing never needs a wallet.', 'err');
+  btn.disabled = true;
+  try {
+    let tok = hillTok();
+    if (!tok) { say('Joining the Hill as ' + nm + '…'); const j = await hillPost('/api/hill/join', { name: nm }); if (!j.j.token) throw new Error(j.j.error || 'Could not join.'); store.set('hillName', nm); store.set('hillTok', j.j.token); tok = j.j.token; }
+    say('Getting your checked run…'); const t = await hillPost('/api/hill/ticket', { name: nm, token: tok }); if (!t.j.run) throw new Error(t.j.error || 'No checked run yet.');
+    say('Check your wallet and tap Sign…');
+    const r = await w.request('stx_signStructuredMessage', { message: hillMsg(t.j.name, t.j.xp, t.j.run), domain: hillDomain() });
+    const res = (r && r.result) || r || {}, sig = String(res.signature || '').replace(/^0x/, ''), pub = String(res.publicKey || '').replace(/^0x/, '');
+    if (!sig || !pub) throw new Error('The wallet did not sign.');
+    say('Sending your claim…'); const c = await hillPost('/api/hill/claim', { name: nm, token: tok, xp: t.j.xp, run: t.j.run, pubkey: pub, sig });
+    if (!c.j.ok) throw new Error(c.j.error || 'The claim did not go through.');
+    btn.hidden = true; say('✓ CLAIM SENT. Your spot is written on Stacks once the chain confirms it. Check the Hill in a few minutes.', 'ok');
+  } catch (e) { btn.disabled = false; say(String(e && e.message || e).slice(0, 160) || 'Something went wrong. Try again.', 'err'); } }
+// v60 bot shield (layer 3): a tiny summary of how taps were spaced in the run. No raw taps, no device info.
+// The server only flags "too perfect" runs for a person to look at; nothing is ever banned automatically.
+function hpTap() { if (!S || S.dead || S.pause) return; const t = performance.now(), g = S.hpG || (S.hpG = { last: 0, gaps: [] }); if (g.last && g.gaps.length < 3000) g.gaps.push(t - g.last); g.last = t; }
+function hpSum() { const g = (S && S.hpG && S.hpG.gaps) || [], n = g.length; if (n < 2) return { n }; const m = g.reduce((a, b) => a + b, 0) / n, sd = Math.sqrt(g.reduce((a, b) => a + (b - m) * (b - m), 0) / n);
+  return { n, cv: Math.round(sd / m * 1000) / 1000, mg: Math.round(Math.min(...g)), pz: g.filter(x => x > 1500).length }; }
 
 // v45b: report a problem (pause menu + run over). Same rules as the board page's box.
 function repOpen(where = 'game') { if ($('rep')) $('rep').remove(); const ov = document.createElement('div'); ov.className = 'ov'; ov.id = 'rep'; let W = where;
@@ -3621,6 +3686,7 @@ function toLocal(t) { const b = cv.getBoundingClientRect(); return [(t.clientX -
 const held = new Map();
 function press(x, y, id) { const t = performance.now() / 1000; if (Math.hypot(x - 296, y - 588) < 48) { BTN_T.fire = t; fire(); if (store.get('holdFire', 0)) held.set(id, 'fire'); } else if (Math.hypot(x - 196, y - 600) < 32) { BTN_T.power = t; power(); } else { BTN_T.jump = t; jump(); } }
 cv.addEventListener('pointerdown', ev => { ev.preventDefault(); const [x, y] = toLocal(ev); press(x, y, ev.pointerId); });
+cv.addEventListener('pointerdown', hpTap, true); addEventListener('keydown', ev => { if (!ev.repeat && !typing(ev)) hpTap(); }, true);
 addEventListener('pointerup', ev => held.delete(ev.pointerId)); addEventListener('pointercancel', ev => held.delete(ev.pointerId));
 const keys = new Set();
 const typing = ev => ev.target && /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName);
