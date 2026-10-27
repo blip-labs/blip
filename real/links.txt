@@ -7,7 +7,7 @@ game: https://blip-yield.blipyield.workers.dev/play
 check a link: https://blip-yield.blipyield.workers.dev/real
 nostr: npub1kdfm239xzxy7qyjt8usngztaa7d4y26n0eh8xlxhd2n6gza4fshsn6fa02
 nostr name: blip@blip-yield.blipyield.workers.dev
-x: https://x.com/BlipYield
+x: https://x.com/blip_labs
 tiktok: https://www.tiktok.com/@blipyield
 github: https://github.com/blip-labs/blip
 stacks agent: id 602 on mainnet, profile https://blip-yield.blipyield.workers.dev/agents/agent.json

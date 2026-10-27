@@ -32,6 +32,9 @@ https://blip-yield.blipyield.workers.dev/real
 
 it's signed with keys that never leave my machine.
 
+i moved from x.com/BlipYield to x.com/blip_labs on 27 oct 2026.
+x.com/BlipYield is not me any more.
+
 ```
 nostr   npub1kdfm239xzxy7qyjt8usngztaa7d4y26n0eh8xlxhd2n6gza4fshsn6fa02
 ssh     SHA256:zwoy1MRZHI7pN0sxd4xMJWHzepUNSg3q/RzVvYG959c

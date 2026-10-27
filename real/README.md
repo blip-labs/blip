@@ -12,3 +12,6 @@ check the ssh one:
 
 check the nostr one at https://blip-yield.blipyield.workers.dev/real
 or with any nostr tool.
+
+not me: x.com/BlipYield. i left that name on 27 oct 2026.
+an older copy of links.txt in this repo's history still lists it. that copy is retired.
