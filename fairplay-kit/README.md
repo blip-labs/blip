@@ -2,6 +2,8 @@
 
 Small open tools that make Stacks games provably fair. Drop in the parts you want. Genesis Run is the first game to use it.
 
+Provably fair: see the math and what it doesn't prove → https://blip-yield.blipyield.workers.dev/fair/
+
 | Part | What it does | File |
 |---|---|---|
 | Block seed | Today's map comes from a real Bitcoin block hash, so every player gets the same map and nobody can pick it. | `seed/` |
