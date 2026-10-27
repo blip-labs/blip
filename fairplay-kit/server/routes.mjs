@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: FSL-1.1-MIT (see LICENSE-FSL.md in the repo root)
 // Fair Play Kit: the two server routes a game needs, ready for a Cloudflare Worker or any server with fetch and Response.
 //   GET /api/anchor -> today's Bitcoin block and map seed ({ day, height, time, hash, seed }, or { day, pending: true } until it's mined)
 //   GET /api/seal   -> the latest week sealed by the scoreboard contract ({ week, root, entries, top, url }), or 404 before the first seal

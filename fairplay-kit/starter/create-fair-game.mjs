@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: FSL-1.1-MIT (see LICENSE-FSL.md in the repo root)
 // Fair Play Kit starter: one command makes a new game folder with the kit's code, the scoreboard contract, their tests and the tiny example game.
 //   node starter/create-fair-game.mjs my-game
 // It only copies files. It installs nothing, asks for no wallet and reads no keys. Then: cd my-game && npm install && npm test && npm start

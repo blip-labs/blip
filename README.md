@@ -23,7 +23,12 @@ stealth-payments/
 
 play it: https://blip-yield.blipyield.workers.dev/play
 
-mit licence. take it, fork it, run your own.
+the fairness math is mit: take it, check me with it, reuse it.
+the game and the kit's server parts are fsl: read them, run them for yourself,
+change them, just don't sell or host a copy that competes with me. each
+version turns mit two years after it ships. anything i put out before
+27 oct 2026 stays mit.
+copies get their own name and face, not mine. details: LICENSE, TRADEMARKS.md
 
 ## the real me
 

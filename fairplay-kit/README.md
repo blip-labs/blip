@@ -54,3 +54,9 @@ Testnet proof. The contract is not on mainnet. Mainnet waits for an outside secu
 5. Outlives us: yes. The fingerprints live on Stacks and Bitcoin, the code is open, and any Stacks API can replace Hiro.
 6. Private: players' phones talk only to the game's own server. The server reads public chain data. Nothing personal goes on-chain, only fingerprints.
 7. You're in control: boards are plain JSON, fingerprints can be recomputed by anyone, and nothing is hidden.
+
+## Licence
+
+The math and the checkers (`seed/`, `duel/`, `board/`, `contract/`, `test/`) are MIT. Use them anywhere, including to check us.
+
+The parts that run a game for you (`server/`, `starter/`, `names/`, `example/`) are FSL-1.1-MIT. You can read, run and change them for your own game. You can't sell or host them as a product that competes with ours. Each version becomes MIT two years after it is published. See `LICENSE` and `LICENSE-FSL.md` in the repo root.

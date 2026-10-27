@@ -1,3 +1,30 @@
+This repository uses two licences.
+
+1. FSL-1.1-MIT (see LICENSE-FSL.md) covers these folders, from 27 October
+   2026 on:
+     game/
+     fairplay-kit/server/
+     fairplay-kit/starter/
+     fairplay-kit/names/
+     fairplay-kit/example/
+   You can read, run, change and share them for any purpose except a
+   Competing Use (selling or hosting them as a product that competes with
+   ours). Each version becomes MIT two years after it is published.
+   Versions published before 27 October 2026 stay under MIT.
+
+2. MIT (below) covers everything else, including the fairness math and the
+   tools anyone can use to check it:
+     fairplay-kit/seed/
+     fairplay-kit/duel/
+     fairplay-kit/board/
+     fairplay-kit/contract/
+     fairplay-kit/test/
+     guide/, clarity4-recipes/, stealth-payments/, bot-cup-research/
+
+Names and art: see TRADEMARKS.md. Neither licence grants rights to them.
+
+---
+
 MIT License
 
 Copyright (c) 2026 Blip contributors

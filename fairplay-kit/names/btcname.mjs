@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: FSL-1.1-MIT (see LICENSE-FSL.md in the repo root)
 // Fair Play Kit: .btc names, server side and read-only.
 // A player who chooses to sign in with a Stacks wallet can show their .btc name (BNS) on the board instead of a typed nickname.
 // It only READS a public name. It never asks for keys and never sends a transaction. Players without a wallet keep their nickname.
