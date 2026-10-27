@@ -4,6 +4,8 @@
 import { dayStart, dayKey, pickAnchor, seedFromHash } from './fairseed.js';
 
 const UA = 'FairPlayKit/1.0 (+https://github.com/blip-labs)';
+// From this UTC day on, a source whose block list skips a height is not trusted for the anchor (see fromSource).
+export const GAP_CHECK_FROM = Date.UTC(2026, 9, 28);
 
 // Hiro: newest first, 30 per page.
 async function* hiroPages(fetchImpl, apiKey) {
@@ -34,6 +36,13 @@ async function fromSource(pages, start, maxPages) {
     if (n === extra || !page.length || ++n >= maxPages + (extra >= 0 ? 1 : 0)) break;
   }
   if (!blocks.some(b => b.time < start)) throw new Error('could not reach back to midnight');
+  // Hiro leaves out Bitcoin blocks that carry no Stacks block. A missing height could be the real first block after
+  // midnight, so any gap counts as a failure and the next source is used. Days before GAP_CHECK_FROM keep the old rule,
+  // so a day's anchor never changes after it was first served.
+  if (start * 1000 >= GAP_CHECK_FROM) { // start is in seconds
+    const hs = [...new Set(blocks.filter(b => b.time >= start - 7200).map(b => b.height))].sort((a, b) => a - b); // around midnight only
+    for (let i = 1; i < hs.length; i++) if (hs[i] !== hs[i - 1] + 1) throw new Error('gap in block list at ' + (hs[i - 1] + 1));
+  }
   return pickAnchor(blocks, start);
 }
 

@@ -27,7 +27,7 @@ cd my-game && npm install && npm test && npm start
 ## Try it
 
 ```
-node --test test/kit.test.mjs test/routes.test.mjs   # the JavaScript parts (20 checks)
+node --test test/kit.test.mjs test/routes.test.mjs test/anchorfix.test.mjs   # the JavaScript parts (24 checks)
 python3 -m http.server 8124          # then open http://localhost:8124/example/
 ```
 
